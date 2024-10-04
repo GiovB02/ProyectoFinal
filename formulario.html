@@ -4,8 +4,93 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro Meet & Greet</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/formulario.css">
 </head>
+<header>
+    <img src="img/logo2.png" alt="ElCuartetoDeNos" id="logo">
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="#galeria">Galería</a>
+        <a href="#">Noticias</a>
+        <a href="biografia.html">Biografia</a>
+        <a href="discografia.html">Discografia</a>
+        <a href="integrantes.html">Integrantes</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="eventos.html">Proximos Eventos</a>
+    </nav>
+</header>
+<hr id="separador1">
+<hr id="separador2">
 <body>
-    
+    <section>
+		<article class="ofertas">
+			<div class="envoltorio">
+				<form action="aplicar.php" method="post" class="formulario">
+                    <label for="ciudad">Ciudad:</label>
+					<select name="ciudad" id="ciudad" required>
+						<option value="">Selectione su ciudad</option>
+						<option value="aguascalientes">Aguascalientes</option>
+						<option value="san-luis">San Luis</option>
+						<option value="leon">Leon</option>
+						<option value="ciudad juarez">Ciudad Juárez</option>
+						<option value="durango">Durango</option>
+						<option value="orlando">Orlando</option>
+						<option value="fort-lauderdale">Fort Lauderdale</option>
+						<option value="chicago">Chicago</option>
+						<option value="new-york-1">New York 1</option>
+						<option value="new-york-2">New York 2</option>
+						<option value="houston">Houston</option>
+						<option value="dallas">Dallas</option>
+						<option value="los-angeles">Los Ángeles</option>
+                        <option value="tijuana">Tijuana</option>
+					</select>
+					<label for="nombre" class="">Nombre:</label>
+					<input type="text" name="nombre" id="nombre" required>
+					<br>
+					<label for="apellido">Apellido:</label>
+					<input type="text" name="apellido" id="apellido" required>
+					<br>
+					<label for="edad">Edad:</label>
+					<input type="number" name="edad" id="edad" min="18" max="100" required>
+					<br>
+					<label for="genero">Género:</label>
+					<div class="radio-type">
+						<div class="opcion-genero">
+							<input type="radio" name="genero" id="masculino" value="masculino" required>
+							<label for="masculino">Masculino</label>
+						</div>
+						<div class="opcion-genero">
+							<input type="radio" name="genero" id="femenino" value="femenino" required>
+							<label for="femenino">Femenino</label>
+						</div>
+					</div>
+					<br>
+					<label for="telefono">Número de teléfono:</label>
+					<input type="tel" name="telefono" id="telefono" pattern="[0-9]{8}" required>
+					<br>
+                    <label for="email" class="">Correo Electrónico:</label>
+					<input type="text" name="email" id="email" required>
+					<br>
+					<label for="localidad">Localidad de concierto:</label>
+					<select name="localidad" id="localidad" required>
+						<option value="">Seleccione su localidad</option>
+						<option value="software">VIP</option>
+						<option value="derecho">General</option>
+					</select>
+					<br>
+					<input type="submit" name="enviar" value="Enviar Registro">
+				</form>
+			</div>
+		</article>
+	</section>
+
+
+
 </body>
+<footer>
+    <hr id="separador2">
+    <hr id="separador1">
+    <p>Grupo Musical - Proyecto Desarrollo Web</p>
+</footer>
 </html>
