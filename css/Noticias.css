@@ -133,7 +133,7 @@ span .boton:hover{
         gap: 20px;
     }
     .articulo{
-        flex: 0 1 calc(45% - 20px);
+        flex: 0 1 calc(44% - 20px);
         box-sizing: border-box;
         margin-bottom: 20px;
     }
