@@ -71,6 +71,7 @@ h1{
     margin: 0;
     font-weight: 500;
     z-index: 1;
+    text-align: left;
 }
 
 .fechas-calendario {
@@ -120,9 +121,14 @@ h1{
     text-align: center;
     text-transform: uppercase;
 }
+
+.concierto h2{
+    color: white;
+}
+
 .concierto h3 a{
     text-decoration: none;
-    color: white;
+    color: rgb(88, 38, 38);
 }
 
 .concierto h3 a:hover{
