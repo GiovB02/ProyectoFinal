@@ -45,7 +45,7 @@
 						<option value="los-angeles">Los Ángeles</option>
                         <option value="tijuana">Tijuana</option>
 					</select>
-					<label for="nombre" class="">Nombre:</label>
+					<label for="nombre" class="nombre">Nombre:</label>
 					<input type="text" name="nombre" id="nombre" required>
 					<br>
 					<label for="apellido">Apellido:</label>
@@ -79,18 +79,16 @@
 						<option value="derecho">General</option>
 					</select>
 					<br>
-                    <label for="terminos">
+                    <div class="checkbox-type opcion-terminos">
                         <input type="checkbox" id="terminos" required>
-                        Acepto los términos y condiciones
-                    </label>
+                        <label for="terminos">Acepto los términos y condiciones</label>
+                    </div>
                     <br>
 					<input type="submit" name="enviar" value="Enviar Registro" id="btnEnviar" disabled>
 				</form>
 			</div>
 		</article>
 	</section>
-
-
 
 </body>
 <footer>
