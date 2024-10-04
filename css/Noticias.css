@@ -1,0 +1,121 @@
+h1{
+    background-color: #9cc7e2;
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+    border: white;
+    margin: 2px;
+}
+
+.Noticiass{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    z-index: 1;
+}
+
+.Noticiass:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("https://www.rosarioencartel.com.ar/web/wp-content/uploads/2015/01/Cuarteto-de-nos-prensa-2024-1-768x561.jpg") center;
+    background-size: cover;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.articulo{
+    position: relative;
+    width: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+    z-index: 2;
+}
+
+.img-articulo1, .img-articulo2, .img-articulo3, .img-articulo4, .img-articulo5, .img-articulo6 {
+    position: relative;
+    height: 200px;
+    padding: 20px;
+    color: #fff;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+.img-articulo1{
+    background: url(https://blobcore.pulsoslp.com.mx/images/2024/10/03/foto-1-cuarteto...el-grupo.jpg) center center;
+    background-size: cover;
+}
+.img-articulo2{
+    background: url(https://www.am.com.mx/u/fotografias/m/2024/9/30/f768x1-607758_607885_5050.jpg) center center ;
+    background-size: cover;
+}
+.img-articulo3{
+    background: url(https://caracoltv.brightspotcdn.com/dims4/default/b5bd3ba/2147483647/strip/true/crop/1500x720+0+0/resize/1000x480!/quality/90/?url=https%3A%2F%2Fcaracol-brightspot.s3-us-west-2.amazonaws.com%2Fassets%2Fshock%2Fcontent_files%2F2020_09%2Ffeat_event%2Fcuarteto-de-nos.jpg) center center;
+    background-size: cover;
+}
+.img-articulo4{
+    background: url(https://lineadirectaportal.com/wp-content/uploads/2024/09/444154894_18401850460077723_4868260123276383149_n.jpg.webp) center center no-repeat;
+    background-size: cover;
+}
+.img-articulo5{
+    background: url(https://imgs.elpais.com.uy/dims4/default/fae2286/2147483647/strip/true/crop/616x424+0+92/resize/1440x990!/quality/90/?url=https%3A%2F%2Fel-pais-uruguay-production-web.s3.us-east-1.amazonaws.com%2Fbrightspot%2F85%2Fea%2Fdac421834548aff912d3cf051af8%2Fmusso-2.jpg) center center;
+    background-size: cover;
+}
+.img-articulo6{
+    background: url(https://media.timeout.com/images/106183942/750/562/image.webp) center center;
+    background-size: cover;
+}
+
+
+
+.img-articulo:before {
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.img-articulo h2,
+.img-articulo h3,
+.img-articulo h4,
+.img-articulo .boton {
+    position: relative;
+    margin: 0;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.img-articulo h4{
+    padding-top: 1%;
+    padding-bottom: 5%;
+}
+.boton{
+    background-color: #7bb8de;
+    padding: 7px;
+    border-radius: 5px;
+    color: white;
+    margin-top: 10px;
+    font-size: .9em;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: backgroud 1s;
+}
+span .boton:hover{
+    background-color: #cc734a;
+    color: white;
+}
