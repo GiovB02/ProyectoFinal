@@ -53,6 +53,11 @@ h1{
 }
 .img-articulo1{
     background: url(https://blobcore.pulsoslp.com.mx/images/2024/10/03/foto-1-cuarteto...el-grupo.jpg) center center;
+    background-size: cover;
+<<<<<<< HEAD
+=======
+    background-size: cover;
+>>>>>>> main
 }
 .img-articulo2{
     background: url(https://www.am.com.mx/u/fotografias/m/2024/9/30/f768x1-607758_607885_5050.jpg) center center ;
