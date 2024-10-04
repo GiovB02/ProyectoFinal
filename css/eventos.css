@@ -1,0 +1,73 @@
+body{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rosarioencartel.com.ar%2Fcuarteto-de-nos-2024%2F&psig=AOvVaw1kKH_Vrg9_sYtQa5GXIJiZ&ust=1728090313439000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPjrlJ3E84gDFQAAAAAdAAAAABAJ");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+
+    &::before{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background: inherit;
+        filter: blur(10px);
+    }
+}
+
+.calendario{
+    position: relative;
+    width: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 5px 50px rgba(#000, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.img-calendario{
+    position: relative;
+    height: 200px;
+    padding: 20px;
+    color: #fff;
+    background: url("https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.rosarioencartel.com.ar%2Fcuarteto-de-nos-2024%2F&psig=AOvVaw1kKH_Vrg9_sYtQa5GXIJiZ&ust=1728090313439000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPjrlJ3E84gDFQAAAAAdAAAAABAJ");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    text-shadow: 0 2px 2px rgba(#000, 0.2);
+    box-sizing: border-box;
+
+    &::before{
+        content: "";
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        position: absolute;
+    }
+
+    h2{
+        margin: 0;
+    }
+
+    h3{
+        margin: 0;
+        font-weight: 500;
+    }
+}
+
+.fechas-calendario{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25px, 1fr));
+    grid-gap: 10px;
+    box-sizing: border-box;
+}
