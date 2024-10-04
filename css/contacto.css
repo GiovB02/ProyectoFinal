@@ -33,6 +33,10 @@ body{
     font-size: 30px;
     line-height: 52px;
 }
+
+.titulo{
+    width: 100%;
+}
   
 .staff{
     display: grid;
