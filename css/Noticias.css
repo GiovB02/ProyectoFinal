@@ -52,7 +52,7 @@ h1{
     box-sizing: border-box;
 }
 .img-articulo1{
-    background: url(https://blobcore.pulsoslp.com.mx/images/2024/10/03/foto-1-cuarteto...el-grupo.jpg) center center;
+    background: url(https://blobcore.pulsoslp.com.mx/images/2024/10/03/foto-1-cuarteto...el-grupo.jpg) center center no-repeat;
     background-size: cover;
 <<<<<<< HEAD
 =======
@@ -60,11 +60,11 @@ h1{
 >>>>>>> main
 }
 .img-articulo2{
-    background: url(https://www.am.com.mx/u/fotografias/m/2024/9/30/f768x1-607758_607885_5050.jpg) center center ;
+    background: url(https://www.am.com.mx/u/fotografias/m/2024/9/30/f768x1-607758_607885_5050.jpg) center center no-repeat;
     background-size: cover;
 }
 .img-articulo3{
-    background: url(https://caracoltv.brightspotcdn.com/dims4/default/b5bd3ba/2147483647/strip/true/crop/1500x720+0+0/resize/1000x480!/quality/90/?url=https%3A%2F%2Fcaracol-brightspot.s3-us-west-2.amazonaws.com%2Fassets%2Fshock%2Fcontent_files%2F2020_09%2Ffeat_event%2Fcuarteto-de-nos.jpg) center center;
+    background: url(https://caracoltv.brightspotcdn.com/dims4/default/b5bd3ba/2147483647/strip/true/crop/1500x720+0+0/resize/1000x480!/quality/90/?url=https%3A%2F%2Fcaracol-brightspot.s3-us-west-2.amazonaws.com%2Fassets%2Fshock%2Fcontent_files%2F2020_09%2Ffeat_event%2Fcuarteto-de-nos.jpg) center center no-repeat;
     background-size: cover;
 }
 .img-articulo4{
@@ -72,11 +72,11 @@ h1{
     background-size: cover;
 }
 .img-articulo5{
-    background: url(https://imgs.elpais.com.uy/dims4/default/fae2286/2147483647/strip/true/crop/616x424+0+92/resize/1440x990!/quality/90/?url=https%3A%2F%2Fel-pais-uruguay-production-web.s3.us-east-1.amazonaws.com%2Fbrightspot%2F85%2Fea%2Fdac421834548aff912d3cf051af8%2Fmusso-2.jpg) center center;
+    background: url(https://imgs.elpais.com.uy/dims4/default/fae2286/2147483647/strip/true/crop/616x424+0+92/resize/1440x990!/quality/90/?url=https%3A%2F%2Fel-pais-uruguay-production-web.s3.us-east-1.amazonaws.com%2Fbrightspot%2F85%2Fea%2Fdac421834548aff912d3cf051af8%2Fmusso-2.jpg) center center no-repeat;
     background-size: cover;
 }
 .img-articulo6{
-    background: url(https://media.timeout.com/images/106183942/750/562/image.webp) center center;
+    background: url(https://media.timeout.com/images/106183942/750/562/image.webp) center center no-repeat;
     background-size: cover;
 }
 
@@ -122,4 +122,30 @@ h1{
 span .boton:hover{
     background-color: #cc734a;
     color: white;
+}
+
+@media screen and (min-width:768px) {
+    .Noticiass{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    .articulo{
+        flex: 0 1 calc(45% - 20px);
+        box-sizing: border-box;
+        margin-bottom: 20px;
+    }
+    .img-articulo1, .img-articulo2, .img-articulo3, .img-articulo4, .img-articulo5, .img-articulo6{
+        height: 300px;
+        font-size:x-large;
+        background-size: cover;}
+    }
+    h4{
+        padding-bottom: 25px;
+    }
+    .img-articulo5{
+        background-position: 0px 0px;
+    }
 }
