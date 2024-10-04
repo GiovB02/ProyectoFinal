@@ -64,17 +64,20 @@ select{
 	padding: 10px;
 }
 
-.radio-type{
+.radio-type, .checkbox-type{
 	display: flex;
 	align-items: center;
-	gap: 30px;
+	gap: 15px;
 	margin-bottom: 20px;
 }
 
-.opcion-genero{
+.opcion-genero, .opcion-terminos{
 	display: flex;
 	align-items: center;
 	gap: 10px;
+}
+input[type="radio"], input[type="checkbox"]{
+    margin-right: 5px;
 }
 
 form .opcion-genero input[type="radio"]{
@@ -92,4 +95,14 @@ form .radio-type{
 	flex-direction: row;
 	justify-content: flex-start;
 	gap: 30px;
+}
+
+label.radio-label, label.checkbox-label {
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+.nombre{
+    margin-top: 15px;
 }
