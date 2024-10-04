@@ -15,7 +15,6 @@ header {
     background-color: var(--primary);
     color: white;
     text-align: center;
-    z-index: 3;
 }
 
 #logo {
@@ -65,7 +64,6 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: 2;
 }
 
 
