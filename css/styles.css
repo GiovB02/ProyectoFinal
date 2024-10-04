@@ -3,32 +3,27 @@
     --secondary: #0c4568;
     --tertiary: #cc734a;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Century Gothic', sans-serif;
 }
-
 header {
     background-color: var(--primary);
     color: white;
     text-align: center;
 }
-
 #logo {
     width: 200px;
     margin: 0 auto;
     display: block;
 }
-
 header nav {
     margin-top: 10px;
     display: flex;
     justify-content: center;
 }
-
 header nav a {
     color: var(--secondary);
     text-decoration: none;
@@ -37,26 +32,21 @@ header nav a {
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
 }
-
 header nav a:hover {
     background-color: var(--tertiary);
     color: white;
 }
-
 #separador1, #separador2 {
     width: 100%;
     height: 5px;
     border: none;
 }
-
 #separador1 {
     background-color: rgb(225, 225, 225);
 }
-
 #separador2 {
     background-color: var(--tertiary);
 }
-
 footer {
     background-color: var(--primary);
     color: rgb(0, 0, 0);
@@ -64,7 +54,129 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    z-index: 10;
 }
+
+h1 {
+    text-align: center;
+    margin: 20px;
+    color: var(--secondary);
+    background-color: var(--primary);
+    text-transform: uppercase;
+}
+
+body{
+    margin-bottom: 150px ;
+}
+
+h2 {
+    text-align: center;
+    color: var(--primary);
+    text-transform: uppercase;
+}
+
+p {
+    text-align: center;
+    margin: 20px;
+}
+
+.integrante-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.integrante {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.integrante img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.integrante p {
+    margin: 10px 0 0 0;
+    color: var(--secondary);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+
+
+/*GALERÍA DE IMÁGENES*/
+.galeria {
+    position: relative;
+    width: 70%; /* Ancho a ocupar por la galería sobre el total disponible */
+    overflow: hidden;
+    margin: 20px auto;
+    background-color: #000;
+    box-shadow: 1px 1px 6px #000;
+    }
+    .galeria:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url('../img/img5.jpg') no-repeat 50% 50%;
+    -moz-background-size: cover;-webkit-background-size: cover;background-size: cover;
+    opacity: .1;
+    }
+    .imagen {
+    position: relative;
+    width: 15%; /* Ancho de la miniatura sobre el ancho total de la galería */
+    padding-bottom: 15%; /* Idéntico al anterior para miniaturas cuadradas */
+    background-position: 50% 50%;
+    -moz-background-size: cover;-webkit-background-size: cover;background-size: cover;
+    cursor: pointer;
+    }
+    .imagen:nth-of-type(1) {
+    background-image: url('../img/img1.jpg')}
+    .imagen:nth-of-type(2) {
+    background-image: url('../img/img3.webp')}
+    .imagen:nth-of-type(3) {
+    background-image: url('../img/img2.jpg')}
+    .imagen:nth-of-type(4) {
+    background-image: url('../img/img4.jpg')}
+    .imagen:before {
+    content: "";
+    position: absolute;
+    top: -700%; /* ((Nºimágenes*2)-1)*100*/
+    left: 100%;
+    width: 566%; /* (10000/ancho_imagen)-100 */
+    height: 400%; /* Nºimagenes*100 */
+    background-image: inherit;
+    -moz-background-size: cover;-webkit-background-size: cover;background-size: cover;
+    -moz-transition: all .8s ;-webkit-transition: all .8s ;transition: all .8s ;
+    }
+    .imagen:hover:nth-of-type(1):before {
+    top: 0%; /* (Nº.nth-1)*(-100) */
+    }
+    .imagen:hover:nth-of-type(2):before {
+    top: -100%; /* (Nº.nth-1)*(-100) */
+    }
+    .imagen:hover:nth-of-type(3):before {
+    top: -200%; /* (Nº.nth-1)*(-100) */
+    }
+    .imagen:hover:nth-of-type(4):before {
+    top: -300%; /* (Nº.nth-1)*(-100) */
+    }
+
+
+
+
 
 
 
@@ -81,6 +193,9 @@ footer {
     #logo {
         width: 150px;
     }
+    .integrante {
+        width: calc(50% - 40px); /* Dos columnas para pantallas más pequeñas */
+    }
 }
 
 @media (max-width: 480px) {
@@ -92,5 +207,9 @@ footer {
 
     #logo {
         width: 100px;
+    }
+
+    .integrante {
+        width: 100%;
     }
 }
