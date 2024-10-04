@@ -163,3 +163,24 @@ body{
     grid-gap: 10px;
     box-sizing: border-box;
 }
+
+.dia-calendario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    font-weight: 600;
+    color: #262626;
+
+    &:nth-child(7){
+        color: #ff685d;
+    }
+}
+
+.num-calendario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    color: #262626;
+}
