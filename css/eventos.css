@@ -90,7 +90,7 @@ h1{
     color: #262626;
 }
 
-.dia-calendario:nth-child(7) {
+.dia-calendario:nth-child(2n+1) {
     color: #ff685d;
 }
 
@@ -101,4 +101,31 @@ h1{
     height: 25px;
     color: #262626;
     font-weight: 600;
+}
+
+#lista-conciertos{
+    filter: none;
+    background-color: #DB491D;
+}
+
+.concierto{
+    filter: none;
+    padding: 40px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+.concierto h3 a{
+    text-decoration: none;
+    color: white;
+}
+
+.concierto h3 a:hover{
+    text-decoration: none;
+    color: rgb(0, 200, 255);
+    font-size: 24px;
+}
+
+.concierto:nth-child(2n+1){
+    background-color: rgb(177, 112, 6);
 }
