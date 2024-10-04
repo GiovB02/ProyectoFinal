@@ -1,0 +1,136 @@
+h1{
+    background-color: #9cc7e2;
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+    border: white;
+    margin: 2px;
+}
+
+.calendar{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    padding-top: 20px;
+    padding-bottom: 100px;
+    z-index: 1;
+}
+
+.calendar::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: url("https://www.rosarioencartel.com.ar/web/wp-content/uploads/2015/01/Cuarteto-de-nos-prensa-2024-1-768x561.jpg") no-repeat center;
+    background-size: cover;
+    filter: blur(10px);
+    z-index: -1;
+}
+
+.calendario{
+    position: relative;
+    width: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 20px 0;
+    z-index: 2;
+}
+
+.img-calendario {
+    position: relative;
+    height: 200px;
+    padding: 20px;
+    color: #fff;
+    background: url("https://www.rosarioencartel.com.ar/web/wp-content/uploads/2015/01/Cuarteto-de-nos-prensa-2024-1-768x561.jpg") no-repeat center;
+    background-size: cover;
+    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+.img-calendario::before {
+    content: "";
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+
+.img-calendario h2,
+.img-calendario h3 {
+    position: relative;
+    margin: 0;
+    font-weight: 500;
+    z-index: 1;
+}
+
+.fechas-calendario {
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+    box-sizing: border-box;
+}
+
+.dia-calendario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    font-weight: 600;
+    color: #262626;
+}
+
+.dia-calendario:nth-child(2n+1) {
+    color: #ff685d;
+}
+
+.num-calendario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25px;
+    color: #262626;
+    font-weight: 600;
+}
+
+.dia-concierto{
+    color: crimson;
+    background-color: rgb(210, 234, 255);
+}
+
+#lista-conciertos{
+    filter: none;
+    background-color: #DB491D;
+}
+
+.concierto{
+    filter: none;
+    padding: 40px;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+}
+.concierto h3 a{
+    text-decoration: none;
+    color: white;
+}
+
+.concierto h3 a:hover{
+    text-decoration: none;
+    color: rgb(0, 200, 255);
+    font-size: 24px;
+}
+
+.concierto:nth-child(2n+1){
+    background-color: rgb(177, 112, 6);
+}
