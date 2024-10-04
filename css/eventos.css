@@ -154,6 +154,23 @@ h1{
     padding: 50px 0;
 }
 
+.merch, .meet{
+    width: 45%;
+}
+
+.merch h3, .meet h3{
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.merch h2, .meet h2{
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+
 .boton{
 	display: inline-block;
 	background-color: #0c4568;
