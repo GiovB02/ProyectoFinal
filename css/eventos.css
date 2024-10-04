@@ -140,3 +140,32 @@ h1{
 .concierto:nth-child(2n+1){
     background-color: rgb(177, 112, 6);
 }
+
+/*Seccion de extras de merch y meet and greet*/
+
+.extras{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(69, 27, 27);
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.boton{
+	display: inline-block;
+	background-color: #0c4568;
+	padding: 15px 30px;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: 10px;
+	margin-top: 20px;
+	text-decoration: none;
+}
+
+.boton:hover{
+	background-color: #cc734a;
+}
