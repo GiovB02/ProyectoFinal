@@ -1,10 +1,27 @@
-h1{
-    background-color: #9cc7e2;
-    padding: 25px;
+:root {
+    --primary: #7bb8de;
+    --secondary: #0c4568;
+    --tertiary: #cc734a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', sans-serif;
+}
+
+body{
+    background-color: rgb(207, 230, 250);
+    margin-bottom: 70px;
+}
+
+h1 {
     text-align: center;
-    font-weight: bold;
-    border: white;
-    margin: 2px;
+    margin: 20px;
+    color: var(--secondary);
+    background-color: var(--primary);
+    text-transform: uppercase;
 }
 
 .calendar{
@@ -71,6 +88,8 @@ h1{
     margin: 0;
     font-weight: 500;
     z-index: 1;
+    text-align: left;
+    color: white;
 }
 
 .fechas-calendario {
@@ -110,7 +129,7 @@ h1{
 
 #lista-conciertos{
     filter: none;
-    background-color: #DB491D;
+    background-color: #c4512e;
 }
 
 .concierto{
@@ -120,9 +139,14 @@ h1{
     text-align: center;
     text-transform: uppercase;
 }
+
+.concierto h2{
+    color: white;
+}
+
 .concierto h3 a{
     text-decoration: none;
-    color: white;
+    color: rgb(88, 38, 38);
 }
 
 .concierto h3 a:hover{
@@ -133,4 +157,51 @@ h1{
 
 .concierto:nth-child(2n+1){
     background-color: rgb(177, 112, 6);
+}
+
+/*Seccion de extras de merch y meet and greet*/
+
+.extras{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(69, 27, 27);
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.merch, .meet{
+    width: 45%;
+}
+
+.merch h3, .meet h3{
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-size: 1rem;
+}
+
+.merch h2, .meet h2{
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+    color: white;
+}
+
+
+.boton{
+	display: inline-block;
+	background-color: #0c4568;
+	padding: 15px 30px;
+	color: white;
+	text-transform: uppercase;
+	font-weight: bold;
+	border-radius: 10px;
+	margin-top: 20px;
+	text-decoration: none;
+}
+
+.boton:hover{
+	background-color: #cc734a;
 }
