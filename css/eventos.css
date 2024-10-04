@@ -103,6 +103,11 @@ h1{
     font-weight: 600;
 }
 
+.dia-concierto{
+    color: crimson;
+    background-color: aliceblue;
+}
+
 #lista-conciertos{
     filter: none;
     background-color: #DB491D;
