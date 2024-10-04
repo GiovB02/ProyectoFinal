@@ -1,0 +1,45 @@
+.container{
+    width: 80%;
+    margin: 17px auto 40px auto;
+    display: flex;
+    justify-content: space-around;
+    background-color: #7bb8de;
+    
+    
+}
+
+.bloque{
+    width: 24%;
+    margin: 20px 0;
+    border-radius: 15px;
+    border: #7bb8de 10px solid;
+    
+}
+
+.bloque h3{
+    padding: 20px;
+    text-align: center;
+    color: #cc734a;
+    
+}
+
+.bloque img{
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.2s ease;
+   
+}
+.bloque img:hover{
+    transform: scale(1.3);
+}
+
+.tema{
+    text-align: center;
+    font-family: 'Century Gothic', sans-serif;
+    color: #cc734a;
+}
+
+body{
+   background-color: #0c4568; 
+}
