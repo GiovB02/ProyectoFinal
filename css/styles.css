@@ -15,6 +15,7 @@ header {
     background-color: var(--primary);
     color: white;
     text-align: center;
+    z-index: 3;
 }
 
 #logo {
