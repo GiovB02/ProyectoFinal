@@ -13,7 +13,7 @@
 
 body{
     background-color: rgb(207, 230, 250);
-    margin-bottom: 85px;
+    margin-bottom: 70px;
 }
 
 h1 {
@@ -128,7 +128,7 @@ h1 {
 
 #lista-conciertos{
     filter: none;
-    background-color: #DB491D;
+    background-color: #c4512e;
 }
 
 .concierto{
@@ -185,6 +185,7 @@ h1 {
     font-weight: bold;
     margin-bottom: 20px;
     font-size: 1.5rem;
+    color: white;
 }
 
 
