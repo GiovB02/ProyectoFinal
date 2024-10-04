@@ -1,5 +1,27 @@
+:root {
+    --primary: #7bb8de;
+    --secondary: #0c4568;
+    --tertiary: #cc734a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Century Gothic', sans-serif;
+}
+
 body{
     background-color: rgb(207, 230, 250);
+    margin-bottom: 60px;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+    color: var(--secondary);
+    background-color: var(--primary);
+    text-transform: uppercase;
 }
 .envoltorio .formulario{
 	border: 5px solid #cc734a;
@@ -15,6 +37,7 @@ body{
 	justify-content: center;
 	flex-direction: column;
     z-index: 1;
+    margin-top: 35px;
 }
 
 form{
