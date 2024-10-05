@@ -37,7 +37,7 @@ header nav ul {
 }
 
 header nav ul li {
-    position: relative; /* Necesario para el dropdown */
+    position: relative;
     margin: 0 10px;
 }
 
@@ -64,7 +64,7 @@ header nav ul li ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    top: 100%; /* Muestra el menú justo debajo del botón "Inicio" */
+    top: 100%;
     left: 0;
     min-width: 200px;
     z-index: 20;
@@ -172,7 +172,7 @@ p {
 /*GALERÍA DE IMÁGENES*/
 .galeria {
     position: relative;
-    width: 70%; /* Ancho a ocupar por la galería sobre el total disponible */
+    width: 70%;
     overflow: hidden;
     margin: 20px auto;
     background-color: #000;
@@ -189,8 +189,8 @@ p {
     }
     .imagen {
     position: relative;
-    width: 15%; /* Ancho de la miniatura sobre el ancho total de la galería */
-    padding-bottom: 15%; /* Idéntico al anterior para miniaturas cuadradas */
+    width: 15%;
+    padding-bottom: 15%;
     background-position: 50% 50%;
     -moz-background-size: cover;-webkit-background-size: cover;background-size: cover;
     cursor: pointer;
@@ -274,7 +274,7 @@ p {
         width: 150px;
     }
     .integrante {
-        width: calc(50% - 40px); /* Dos columnas para pantallas más pequeñas */
+        width: calc(50% - 40px);
     }
 }
 
