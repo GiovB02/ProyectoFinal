@@ -1,115 +1,103 @@
 /* General Styles */
 body {
-    font-family: 'Arial', sans-serif; /* Define la fuente del cuerpo del documento */
-    line-height: 1.6; /* Establece la altura de línea para mejorar la legibilidad */
-    margin: 0; /* Elimina el margen por defecto del body */
-    padding: 0; /* Elimina el padding por defecto del body */
-    background-color: #ffffff; /* Establece un color de fondo suave */
-    color: #333; /* Color del texto principal */
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
 }
 
 h1, h2, h3, p {
-    margin: 0 0 15px; /* Margen inferior para separar los elementos */
-    text-align: center; /* Centra el texto de los encabezados y párrafos */
+    margin: 0 0 15px;
+    text-align: center; /* Centra el texto */
+    font-weight: bold; /* Pone los encabezados y párrafos en negrita */
 }
-
-header nav ul {
-    list-style: none; /* Elimina los puntos de la lista */
-    margin: 0; /* Elimina el margen de la lista */
-    padding: 0; /* Elimina el padding de la lista */
-    display: flex; /* Utiliza flexbox para alinear los elementos */
-    justify-content: center; /* Centra los elementos en el contenedor */
-}
-
-header nav ul li {
-    margin: 0 15px; /* Margen horizontal entre los elementos de la lista */
-}
-
-header nav ul li a {
-    color: white; /* Color del texto de los enlaces */
-    text-decoration: none; /* Elimina el subrayado de los enlaces */
-    font-weight: bold; /* Hace el texto de los enlaces más destacado */
-    font-size: 18px; /* Tamaño de fuente de los enlaces */
-    padding: 5px 10px; /* Espaciado interno para los enlaces */
-}
-
-header nav ul li a:hover {
-    background-color: #ff8533; /* Color de fondo cuando se pasa el mouse sobre el enlace */
-    border-radius: 5px; /* Bordes redondeados en el fondo del enlace */
-}
-
-
 
 h1 {
-    color: #ff6600; /* Color del encabezado principal */
-    font-size: 36px; /* Tamaño de fuente del encabezado principal */
-    text-align: center; /* Centra el encabezado principal */
-    margin-bottom: 30px; /* Margen inferior para separar del siguiente contenido */
+    font-size: 36px;
+    color: #ff6600;
 }
 
-
-
-.container { /* Asegúrate de que el contenedor tenga un ancho adecuado */
-    width: 90%; /* Aumentado para un mejor ajuste */
-    max-width: 1200px; /* Máximo ancho del contenedor */
-    margin: 0 auto; /* Centra el contenedor */
-    padding: 15px 15px 50px 15px; /* Añadir un poco de padding */
+h3 {
+    font-size: 24px; /* Ajuste del tamaño de los títulos de los bloques */
 }
 
 p {
-    font-size: 18px; /* Tamaño de fuente de los párrafos */
-    line-height: 1.8; /* Altura de línea para mejorar la legibilidad */
-    color: #000000; /* Color del texto de los párrafos */
-    text-align: center; /* Alinea el texto al centro */
-    margin: 0 0 20px; /* Ajusta márgenes para separar párrafos */
+    font-size: 18px;
+    line-height: 1.8;
+    color: #000000;
+    margin: 0 0 20px;
 }
 
+/* Contenedor de los cuadros */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 15px 50px 15px;
+}
 
-/* Styling for Images */
+.cuadro {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Alinea todo el contenido al centro */
+}
+
 .imagen-biografia {
-    width: 100%; /* La imagen ocupará el 100% del ancho de su contenedor */
-    max-width: 400px; /* Tamaño máximo de las imágenes */
-    height: auto; /* Mantiene la proporción de la imagen */
-    display: block; /* Hace que la imagen se comporte como un bloque */
-    margin: 20px auto; /* Margen automático para centrar la imagen */
-    border-radius: 10px; /* Bordes redondeados para las imágenes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave para las imágenes */
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Fondo de pantalla completo */
+body {
+    background-image: url('https://ca-times.brightspotcdn.com/dims4/default/dfec88b/2147483647/strip/true/crop/5097x7637+0+0/resize/2000x2997!/quality/80/?url=https:%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fa5%2F8e%2F49600e50425eab1a6193a05c1df7%2Fcuarteto-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: rgb(255, 72, 0);
+}
 
-
-
-
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    background-attachment: inherit;
+    filter: blur(8px);
+    z-index: -1;
+    pointer-events: none;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column; /* Cambia la dirección de la lista a columna en pantallas pequeñas */
-        padding: 0; /* Elimina el padding de la lista */
-    }
-
-    header nav ul li {
-        margin: 10px 0; /* Margen vertical entre elementos de la lista */
-    }
-
-    main {
-        padding: 15px; /* Reduce el padding del contenido principal en pantallas pequeñas */
-    }
-
-    h1 {
-        font-size: 28px; /* Tamaño de fuente reducido para el encabezado principal en pantallas pequeñas */
-    }
-
-    h2 {
-        font-size: 24px; /* Tamaño de fuente reducido para el segundo nivel de encabezado en pantallas pequeñas */
-    }
-
-    p, ul li {
-        font-size: 16px; /* Tamaño de fuente reducido para párrafos y elementos de lista en pantallas pequeñas */
+    .container {
+        width: 100%;
     }
 
     .imagen-biografia {
-        width: 100%; /* Asegura que todas las imágenes ocupen el 100% en pantallas pequeñas */
-        max-width: 400px; /* Asegura que todas tengan el mismo tamaño */
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
     }
 }
