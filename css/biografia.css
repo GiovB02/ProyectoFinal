@@ -1,0 +1,103 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+}
+
+h1, h2, h3, p {
+    margin: 0 0 15px;
+    text-align: center; /* Centra el texto */
+    font-weight: bold; /* Pone los encabezados y párrafos en negrita */
+}
+
+h1 {
+    font-size: 36px;
+    color: #ff6600;
+}
+
+h3 {
+    font-size: 24px; /* Ajuste del tamaño de los títulos de los bloques */
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+    color: #000000;
+    margin: 0 0 20px;
+}
+
+/* Contenedor de los cuadros */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 15px 50px 15px;
+}
+
+.cuadro {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Alinea todo el contenido al centro */
+}
+
+.imagen-biografia {
+    width: 100%;
+    max-width: 700px;
+    height: auto;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fondo de pantalla completo */
+body {
+    background-image: url('https://ca-times.brightspotcdn.com/dims4/default/dfec88b/2147483647/strip/true/crop/5097x7637+0+0/resize/2000x2997!/quality/80/?url=https:%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2Fa5%2F8e%2F49600e50425eab1a6193a05c1df7%2Fcuarteto-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: rgb(255, 72, 0);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: inherit;
+    background-size: inherit;
+    background-position: inherit;
+    background-attachment: inherit;
+    filter: blur(8px);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 100%;
+    }
+
+    .imagen-biografia {
+        max-width: 400px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
