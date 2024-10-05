@@ -126,7 +126,7 @@ body{
     height: 130px;
     width: 130px;
     border-radius: 100px;
-    border: #F4F4F4 10px solid;
+    border: #d2d2d2 10px solid;
     overflow: hidden; 
     position: absolute;
     top: 60px;
@@ -155,4 +155,8 @@ body{
     padding-right: 5px;
     margin: 0;
     overflow: auto;
+}
+
+footer{
+    z-index: 1000;
 }
