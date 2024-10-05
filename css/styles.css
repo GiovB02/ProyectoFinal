@@ -13,29 +13,82 @@ header {
     background-color: var(--primary);
     color: white;
     text-align: center;
+    padding-bottom: 10px;
 }
+
 #logo {
     width: 200px;
     margin: 0 auto;
     display: block;
 }
+
 header nav {
     margin-top: 10px;
     display: flex;
     justify-content: center;
 }
-header nav a {
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    position: relative;
+    margin: 0 10px;
+}
+
+header nav ul li a {
     color: var(--secondary);
     text-decoration: none;
     font-size: 20px;
     padding: 20px 30px;
     font-weight: bold;
     transition: background-color 0.3s, color 0.3s;
+    display: block;
 }
-header nav a:hover {
+
+header nav ul li a:hover {
     background-color: var(--tertiary);
     color: white;
 }
+
+/* Estilos para el menú desplegable */
+header nav ul li ul {
+    position: absolute;
+    display: none;
+    background-color: var(--tertiary);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    z-index: 20;
+}
+
+header nav ul li:hover ul {
+    display: block;
+}
+
+header nav ul li ul li {
+    background-color: var(--tertiary);
+    padding: 10px 20px;
+}
+
+header nav ul li ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav ul li ul li a:hover {
+    background-color: var(--secondary);
+}
+
 #separador1, #separador2 {
     width: 100%;
     height: 5px;
@@ -119,7 +172,7 @@ p {
 /*GALERÍA DE IMÁGENES*/
 .galeria {
     position: relative;
-    width: 70%; /* Ancho a ocupar por la galería sobre el total disponible */
+    width: 70%;
     overflow: hidden;
     margin: 20px auto;
     background-color: #000;
@@ -136,8 +189,8 @@ p {
     }
     .imagen {
     position: relative;
-    width: 15%; /* Ancho de la miniatura sobre el ancho total de la galería */
-    padding-bottom: 15%; /* Idéntico al anterior para miniaturas cuadradas */
+    width: 15%;
+    padding-bottom: 15%;
     background-position: 50% 50%;
     -moz-background-size: cover;-webkit-background-size: cover;background-size: cover;
     cursor: pointer;
@@ -153,30 +206,57 @@ p {
     .imagen:before {
     content: "";
     position: absolute;
-    top: -700%; /* ((Nºimágenes*2)-1)*100*/
+    top: -700%;
     left: 100%;
-    width: 566%; /* (10000/ancho_imagen)-100 */
-    height: 400%; /* Nºimagenes*100 */
+    width: 566%;
+    height: 400%;
     background-image: inherit;
     -moz-background-size: cover;-webkit-background-size: cover;background-size: cover;
     -moz-transition: all .8s ;-webkit-transition: all .8s ;transition: all .8s ;
     }
     .imagen:hover:nth-of-type(1):before {
-    top: 0%; /* (Nº.nth-1)*(-100) */
+    top: 0%;
     }
     .imagen:hover:nth-of-type(2):before {
-    top: -100%; /* (Nº.nth-1)*(-100) */
+    top: -100%;
     }
     .imagen:hover:nth-of-type(3):before {
-    top: -200%; /* (Nº.nth-1)*(-100) */
+    top: -200%;
     }
     .imagen:hover:nth-of-type(4):before {
-    top: -300%; /* (Nº.nth-1)*(-100) */
+    top: -300%;
     }
 
 
 
+    #videos-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px auto;
+        padding: 10px;
+        max-width: 90%;
+        gap: 20px;
+    }
+    
+    #videos-section iframe, 
+    #videos-section video {
+        width: 50%;
+        height: 500px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    audio {
+        width: 300px;
+        margin: 20px auto;
+        display: block;
+    }
 
+    h3{
+        text-align: center;
+        color: var(--secondary);
+        text-transform: uppercase;
+    }
 
 
 
@@ -194,7 +274,7 @@ p {
         width: 150px;
     }
     .integrante {
-        width: calc(50% - 40px); /* Dos columnas para pantallas más pequeñas */
+        width: calc(50% - 40px);
     }
 }
 
