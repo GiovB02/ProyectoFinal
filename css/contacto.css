@@ -156,3 +156,7 @@ body{
     margin: 0;
     overflow: auto;
 }
+
+footer{
+    z-index: 1000;
+}
