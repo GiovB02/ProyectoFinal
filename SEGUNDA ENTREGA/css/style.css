@@ -1,0 +1,100 @@
+/* Variables de colores */
+:root {
+    --primary: #7bb8de;
+    --secondary: #0c4568;
+    --tertiary: #cc734a;
+}
+
+/* Reset de estilos y fuente */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Fuente 'Poppins' importada desde Google Fonts */
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Estilos del cuerpo */
+body {
+    display: flex;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 250px;
+    background-color: var(--secondary);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100vh;
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+    color: var(--primary);
+    text-align: center;
+}
+
+.sidebar h3 {
+    margin-bottom: 20px;
+    color: var(--primary);
+}
+
+.sidebar img#logo {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 20px;
+    /* Haciendo que la imagen sea circular */
+    border-radius: 50%;
+    /* Añadiendo un borde a la imagen */
+    border: 2px solid var(--primary);
+    /* Centrando la imagen */
+    align-self: center;
+}
+
+.sidebar a {
+    color: white;
+    text-decoration: none;
+    margin: 10px 0;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    /* Transición suave para el efecto hover */
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.sidebar a:hover {
+    background-color: var(--tertiary);
+    color: #fff;
+}
+
+/* Estilos específicos para el enlace de cerrar sesión */
+.sidebar a.logout {
+    background-color: var(--secondary);
+    font-weight: bold;
+    color: white;
+    margin-top: auto; /* Empuja el enlace hacia el final de la barra lateral */
+}
+
+.sidebar a.logout:hover {
+    background-color: red;
+}
+
+/* Contenido principal */
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.welcome-message {
+    background-color: var(--primary);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 24px;
+}

@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    width: 450px;
+}
+
+.container img {
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    outline: none;
+    transition: border 0.3s;
+}
+
+input[type="email"]:focus,
+input[type="password"]:focus {
+    border: 1px solid #007bff;
+}
+
+input[type="submit"],
+button.toggle-button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 30px;
+    background-color: #28a745;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover,
+button.toggle-button:hover {
+    background-color: #218838;
+}
+
+.toggle-link {
+    display: none; /* Oculto para que solo quede el botón */
+}
