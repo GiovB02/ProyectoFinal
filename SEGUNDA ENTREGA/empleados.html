@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestionar Empleados</title>
-    <!-- Importando la fuente 'Poppins' desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/registro.css">
 </head>
 <body>
-    <!-- Barra lateral de navegación -->
+
     <nav class="sidebar">
-        <!-- Logo o icono del usuario administrador -->
+
         <img id="logo" src="https://static.vecteezy.com/system/resources/previews/000/550/731/original/user-icon-vector.jpg" alt="Icono de Usuario Administrador">
-        <!-- Título del panel -->
+ 
         <h2>Administrador</h2>
-        <!-- Menú de navegación -->
+
         <a href="empleados.html">Registrar Empleados</a>
         <a href="miembros.html">Gestionar Miembros</a>
         <a href="calendario.html">Gestionar Calendario</a>
@@ -25,36 +23,63 @@
         <!-- Enlace para cerrar sesión -->
         <a href="login.html" class="logout">Cerrar sesión</a>
     </nav>
-    <!-- Contenido principal -->
     <div class="main-content">
         <form id="registro-empleados">
             <h1>Registrar Empleados</h1>
             
-            <label for="nombre">Nombre:</label>
+            <label for="nombre">Nombre completo:</label>
             <input type="text" id="nombre" name="nombre">
-    
-            <label for="apellido">Apellido:</label>
-            <input type="text" id="apellido" name="apellido">
     
             <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
             <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
-    
-            <label for="puesto">Puesto:</label>
-            <input type="text" id="puesto" name="puesto">
-    
-            <label for="correo">Correo Electrónico:</label>
-            <input type="email" id="correo" name="correo">
-    
+
             <label for="telefono">Teléfono:</label>
             <input type="tel" id="telefono" name="telefono">
     
-            <button type="submit">Registrar</button>
-        </form>
-    </div>
-    
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo">
 
-    <!-- Enlace a los archivos JavaScript -->
-    <script src="js/calendario.js"></script>
-    <script src="js/discografia.js"></script>
+            <label for="password">Contraseña:</label>
+            <input type="password" id="password" name="password">
+    
+            <button type="submit">Registrar Empleado</button>
+        </form>
+
+        <!-- Lista de empleados registrados -->
+        <section id="lista-empleados">
+            <h2>Empleados Registrados</h2>
+            <div id="empleados-container">
+                <!-- Aquí se mostrarán los empleados registrados -->
+            </div>
+        </section>
+
+        <!-- Modal para editar empleado -->
+        <div id="editModal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close" onclick="closeModal()">&times;</span>
+                <h2>Editar Empleado</h2>
+                <form id="editForm">
+                    <input type="hidden" id="editEmployeeId">
+                    <label for="editEmployeeName">Nombre completo:</label>
+                    <input type="text" id="editEmployeeName" required>
+
+                    <label for="editEmployeeBirthDate">Fecha de Nacimiento:</label>
+                    <input type="date" id="editEmployeeBirthDate" required>
+
+                    <label for="editEmployeePhone">Teléfono:</label>
+                    <input type="tel" id="editEmployeePhone" required>
+
+                    <label for="editEmployeeEmail">Correo Electrónico:</label>
+                    <input type="email" id="editEmployeeEmail" required>
+
+                    <button type="submit" class="save-button">Guardar Cambios</button>
+                    <button type="button" class="delete-button" onclick="eliminarEmpleado()">Eliminar Empleado</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/registroEmpleados.js"></script>
+    
 </body>
 </html>

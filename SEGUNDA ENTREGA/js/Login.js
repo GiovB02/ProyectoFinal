@@ -1,5 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -14,6 +15,7 @@ const firebaseConfig = {
 // Inicializa Firebase
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const auth = getAuth(app);
 
 // Lógica de inicio de sesión
 document.getElementById('formularioLogin').addEventListener('submit', async function(event) {
@@ -23,19 +25,37 @@ document.getElementById('formularioLogin').addEventListener('submit', async func
     const contrasena = document.getElementById('contrasena').value;
 
     try {
-        // Consulta Firestore para verificar el correo y la contraseña
-        const adminRef = collection(db, "admin");
-        const q = query(adminRef, where("email", "==", correo), where("password", "==", contrasena));
-        const querySnapshot = await getDocs(q);
+        // Verificar primero si el usuario es un administrador (datos en Firestore)
+        const adminQuery = query(collection(db, "admin"), where("email", "==", correo), where("password", "==", contrasena));
+        const adminSnapshot = await getDocs(adminQuery);
 
-        if (!querySnapshot.empty) {
-            alert("Inicio de sesión exitoso.");
+        if (!adminSnapshot.empty) {
+            // Si encontramos al administrador
+            sessionStorage.setItem("userType", "admin");
+            alert("Inicio de sesión exitoso como administrador.");
+            window.location.href = 'Index.html';
+            return;
+        }
+
+        // Si no es administrador, intentamos autenticación como empleado usando Firebase Authentication
+        const userCredential = await signInWithEmailAndPassword(auth, correo, contrasena);
+        const user = userCredential.user;
+
+        // Verificar si el usuario autenticado tiene un registro en la colección `empleados`
+        const empleadosQuery = query(collection(db, "empleados"), where("correo", "==", correo));
+        const empleadosSnapshot = await getDocs(empleadosQuery);
+
+        if (!empleadosSnapshot.empty) {
+            // Usuario autenticado como empleado
+            sessionStorage.setItem("userType", "empleado");
+            alert("Inicio de sesión exitoso como empleado.");
             window.location.href = 'Index.html';
         } else {
-            alert("Credenciales inválidas. Por favor, intenta de nuevo.");
+            alert("No se encontraron permisos suficientes. Contacte con el administrador.");
         }
+
     } catch (error) {
-        console.error("Error al verificar el administrador:", error); // Detalle de error en consola
+        console.error("Error al iniciar sesión:", error);
         alert("Ocurrió un error al intentar iniciar sesión. Por favor, intenta más tarde.");
     }
 });

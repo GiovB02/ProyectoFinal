@@ -1,4 +1,4 @@
-/* Variables de colores */
+/* Variables de colores */ 
 :root {
     --primary: #7bb8de;
     --secondary: #0c4568;
@@ -10,13 +10,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Fuente 'Poppins' importada desde Google Fonts */
     font-family: 'Poppins', sans-serif;
 }
 
 /* Estilos del cuerpo */
 body {
     display: flex;
+    height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+    overflow: hidden;
 }
 
 /* Barra lateral */
@@ -27,7 +28,8 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    height: 100vh;
+    height: 100vh; /* Asegura que la barra lateral ocupe toda la altura */
+    position: fixed;
 }
 
 .sidebar h2 {
@@ -36,20 +38,12 @@ body {
     text-align: center;
 }
 
-.sidebar h3 {
-    margin-bottom: 20px;
-    color: var(--primary);
-}
-
 .sidebar img#logo {
     width: 100px;
     height: 100px;
     margin-bottom: 20px;
-    /* Haciendo que la imagen sea circular */
     border-radius: 50%;
-    /* Añadiendo un borde a la imagen */
     border: 2px solid var(--primary);
-    /* Centrando la imagen */
     align-self: center;
 }
 
@@ -60,7 +54,6 @@ body {
     padding: 10px;
     display: block;
     border-radius: 5px;
-    /* Transición suave para el efecto hover */
     transition: background-color 0.3s, color 0.3s;
 }
 
@@ -81,14 +74,18 @@ body {
     background-color: red;
 }
 
-/* Contenido principal */
+/* Contenedor principal para evitar el solapamiento con la barra lateral */
 .main-content {
+    margin-left: 250px;
     flex-grow: 1;
-    padding: 20px;
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
+    padding: 40px;
+    background-color: #f4f7f9;
+    display: flex;
+    flex-direction: column;
+    align-items: center center;
+    overflow-y: auto;
 }
+
 
 .welcome-message {
     background-color: var(--primary);
