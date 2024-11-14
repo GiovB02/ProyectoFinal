@@ -1,34 +1,52 @@
-const Agregar = document.querySelector("#add");
-const Eliminar = document.querySelector("#delete");
-const Editar = document.querySelector("#edit");
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('member-form');
+    const membersTable = document.getElementById('members-table').getElementsByTagName('tbody')[0];
 
-Agregar.onclick = function() {
-    const contenedor = document.querySelector("#idDivPage");
-    const menu = document.querySelectorAll("#idDivPage > header");
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('name').value;
+        const role = document.getElementById('role').value;
+        const fact = document.getElementById('fact').value;
+        const image = document.getElementById('image').files[0];
 
-    let nombre = prompt("Agregue el nombre del nuevo integrante");
-    let rol = prompt("Agregue el rol del nuevo integrante");
-    let descripcion = prompt("Agregue el dato curioso del nuevo integrante");
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            const newRow = membersTable.insertRow();
+            newRow.innerHTML = `
+                <td>${name}</td>
+                <td>${role}</td>
+                <td>${fact}</td>
+                <td><img src="${e.target.result}" alt="${name}" width="50"></td>
+                <td><button class="delete-btn">Eliminar</button></td>
+            `;
+        };
+        reader.readAsDataURL(image);
 
-    if (titulo && nombre && rol && descripcion) {
-        const h1 = document.createElement("h1");
-        h1.setAttribute("class", "display-5 text-center fw-bold py-4 my-4");
-        h1.innerHTML = titulo;
+        form.reset();
+    });
 
-        const pNombre = document.createElement("p");
-        pNombre.innerHTML = `<strong>Nombre:</strong> ${nombre}`;
+    membersTable.addEventListener('click', (e) => {
+        if (e.target.classList.contains('delete-btn')) {
+            const row = e.target.closest('tr');
+            row.remove();
+        }
+    });
 
-        const pRol = document.createElement("p");
-        pRol.innerHTML = `<strong>Rol:</strong> ${rol}`;
+    document.getElementById('edit').addEventListener('click', () => {
+        const selectedRow = membersTable.querySelector('tr.selected');
+        if (selectedRow) {
+            document.getElementById('name').value = selectedRow.cells[0].innerText;
+            document.getElementById('role').value = selectedRow.cells[1].innerText;
+            document.getElementById('fact').value = selectedRow.cells[2].innerText;
+            selectedRow.remove();
+        }
+    });
 
-        const pDescripcion = document.createElement("p");
-        pDescripcion.innerHTML = `<strong>Descripción:</strong> ${descripcion}`;
-
-        contenedor.appendChild(h1);
-        contenedor.appendChild(pNombre);
-        contenedor.appendChild(pRol);
-        contenedor.appendChild(pDescripcion);
-    } else {
-        alert("No se ha registrado toda la información, por favor ingrese todos los datos.");
-    }
-};
+    membersTable.addEventListener('click', (e) => {
+        const rows = membersTable.getElementsByTagName('tr');
+        for (let row of rows) {
+            row.classList.remove('selected');
+        }
+        e.target.parentNode.classList.add('selected');
+    });
+});
