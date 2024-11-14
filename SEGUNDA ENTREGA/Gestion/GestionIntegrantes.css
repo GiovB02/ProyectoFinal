@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    flex-direction: row; /* Barra lateral y contenido principal en fila */
+    flex-direction: row;
 }
 
 .sidebar {
@@ -13,7 +13,7 @@ body {
     color: white;
     padding: 20px;
     height: 100vh;
-    position: fixed; /* Fijar la barra lateral en la pantalla */
+    position: fixed; 
     top: 0;
     left: 0;
 }
@@ -47,16 +47,16 @@ a:hover {
 }
 
 .logout {
-    margin-top: auto; /* Empuja el botón de cerrar sesión hacia el fondo */
+    margin-top: auto; 
     background-color: #e74c3c;
 }
 
 .main-content {
-    margin-left: 250px; /* Deja espacio para la barra lateral */
+    margin-left: 250px;
     padding: 20px;
     flex-grow: 1;
     display: flex;
-    flex-direction: column; /* Coloca los elementos de arriba a abajo */
+    flex-direction: column; 
 }
 
 h1 {
@@ -152,18 +152,17 @@ td img {
     opacity: 0.8;
 }
 
-/* Estilo del contenedor del botón Editar */
 .edit-button-container {
-    margin-top: 20px; /* Agrega espacio arriba del botón Editar */
+    margin-top: 20px; 
     text-align: center;
 }
 
 .edit-button-container button {
-    width: auto; /* El botón solo ocupa el espacio necesario */
+    width: auto;
     margin-bottom: 20px;
 }
 
-/* Responsividad */
+/* R */
 @media (max-width: 768px) {
     .sidebar {
         width: 200px;
