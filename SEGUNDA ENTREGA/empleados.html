@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/registro.css">
 </head>
 <body>
     <!-- Barra lateral de navegación -->
@@ -25,10 +26,35 @@
         <a href="login.html" class="logout">Cerrar sesión</a>
     </nav>
     <!-- Contenido principal -->
-    <main class="main-content">
-            <div>
+    <div class="main-content">
+        <form id="registro-empleados">
+            <h1>Registrar Empleados</h1>
+            
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre">
+    
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido">
+    
+            <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+    
+            <label for="puesto">Puesto:</label>
+            <input type="text" id="puesto" name="puesto">
+    
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo">
+    
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+    
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+    
 
-            </div>
-    </main>
+    <!-- Enlace a los archivos JavaScript -->
+    <script src="js/calendario.js"></script>
+    <script src="js/discografia.js"></script>
 </body>
 </html>

@@ -1,0 +1,122 @@
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh; /* Hace que la página ocupe toda la altura de la ventana */
+}
+
+/* Barra lateral */
+.sidebar {
+    width: 250px;
+    background-color: #0d3c61;
+    color: #ffffff;
+    padding: 20px;
+    text-align: center;
+    height: 100vh; /* Asegura que la barra lateral ocupe toda la altura */
+    position: fixed; /* Fija la barra lateral a la izquierda */
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sidebar img {
+    width: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.sidebar a.logout {
+    color: #b3c7d6;
+    margin-top: auto;
+}
+
+.sidebar a:hover {
+    color: #b3c7d6;
+}
+
+/* Contenido principal */
+.main-content {
+    flex-grow: 1;
+    margin-left: 250px; /* Añade espacio para la barra lateral fija */
+    padding: 40px;
+    background-color: #f4f7f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que el contenido ocupe toda la altura */
+}
+/* Formulario de registro de empleados */
+form#registro-empleados {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    text-align: left;
+    margin-top: 70px; /* Agrega margen superior para separarlo de arriba */
+}
+
+
+/* Título del formulario */
+form#registro-empleados h1 {
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Campos de formulario */
+form#registro-empleados label {
+    font-weight: bold;
+    color: #333333;
+    display: block;
+    margin-top: 15px;
+}
+
+form#registro-empleados input[type="text"],
+form#registro-empleados input[type="email"],
+form#registro-empleados input[type="tel"],
+form#registro-empleados input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Botón de enviar */
+form#registro-empleados button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0d3c61;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+form#registro-empleados button:hover {
+    background-color: #1e5a8a;
+}
