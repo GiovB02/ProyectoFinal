@@ -2,6 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('member-form');
     const membersTable = document.getElementById('members-table').getElementsByTagName('tbody')[0];
 
+    
+
     form.addEventListener('submit', (e) => {
         e.preventDefault();
         const name = document.getElementById('name').value;
