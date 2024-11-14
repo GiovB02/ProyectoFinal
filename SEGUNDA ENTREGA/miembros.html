@@ -26,22 +26,48 @@
         <a href="#" class="logout">Cerrar sesión</a>
     </nav>
 
-    <h1 class>Gestionar Miembros</h1>
-    <br>
-    <br>
-
-    <h2 >Información personal</h2>
-
-    <br>
-    <div class="container my-4">
-        <div class="button-container">
-            <button class="btn-success" id="add">Agregar</button>
-            <button class="btn-danger" id="delete">Eliminar</button>
-            <button class="btn-primary" id="edit">Editar</button>
+    <main class="main-content">
+        <h1>Gestionar Miembros</h1>
+        <br>
+        <h2>Información personal</h2>
+        <br>
+        <div class="container my-4">
+            <div class="button-container">
+                <button class="btn-success" id="add">Agregar</button>
+                <button class="btn-primary" id="edit">Editar</button>
+            </div>
         </div>
-    </div>
 
+        <!-- Formulario para agregar/editar miembros -->
+        <form id="member-form">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="role">Rol:</label>
+            <input type="text" id="role" name="role" required>
+            <label for="fact">Dato Curioso:</label>
+            <input type="text" id="fact" name="fact" required>
+            <label for="image">Imagen:</label>
+            <input type="file" id="image" name="image" accept="image/*" required>
+            <button type="submit">Guardar</button>
+        </form>
 
-    <script src="Gestion/GestionIntegrantes.js" defer ></script>
+        <!-- Tabla para mostrar los miembros -->
+        <table id="members-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Rol</th>
+                    <th>Dato Curioso</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se agregarán los miembros -->
+            </tbody>
+        </table>
+    </main>
+
+    <script src="Gestion/GestionIntegrantes.js" defer></script>
 </body>
 </html>
