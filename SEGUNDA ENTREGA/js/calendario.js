@@ -1,6 +1,5 @@
-// Importa las funciones necesarias desde el SDK de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs, updateDoc, doc, query, orderBy, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc, query, orderBy, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -27,6 +26,23 @@ window.showEventList = function() {
     document.getElementById("eventForm").style.display = "none";
     document.getElementById("eventList").style.display = "block";
     loadEvents();
+}
+
+// Función para eliminar el evento de Firebase
+window.deleteEvent = async function() {
+    const eventId = document.getElementById("editEventId").value;
+
+    if (confirm("¿Estás seguro de que deseas eliminar este evento?")) {
+        try {
+            await deleteDoc(doc(db, "calendario", eventId));
+            alert("Evento eliminado correctamente.");
+            closeModal();
+            showEventList();
+        } catch (error) {
+            console.error("Error al eliminar el evento:", error);
+            alert("Ocurrió un error al intentar eliminar el evento.");
+        }
+    }
 }
 
 // Guarda el evento en Firebase
