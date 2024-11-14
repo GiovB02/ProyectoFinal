@@ -53,10 +53,13 @@
                         <input type="text" id="editEventLocation" required>
                         <label for="editEventUrl">URL para Comprar Boletos:</label>
                         <input type="url" id="editEventUrl" required>
-                        <button type="submit">Guardar Cambios</button>
                     </form>
+                    <div class="button-container">
+                        <button type="submit" form="editForm" class="save-button">Guardar Cambios</button>
+                        <button onclick="deleteEvent()" class="delete-button">Eliminar Evento</button>
+                    </div>
                 </div>
-            </div>
+            </div>            
         </div>
     </main>
 
