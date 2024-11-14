@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/discografia.css">
 </head>
 <body>
     <!-- Barra lateral de navegación -->
@@ -22,13 +23,39 @@
         <a href="calendario.html">Gestionar Calendario</a>
         <a href="discografia.html">Gestionar Discografía</a>
         <!-- Enlace para cerrar sesión -->
-        <a href="#" class="logout">Cerrar sesión</a>
+        <a href="login.html" class="logout">Cerrar sesión</a>
     </nav>
     <!-- Contenido principal -->
     <main class="main-content">
-            <div>
+        <div class="admin-section">
+            <h1>Gestionar Discografía</h1>
+            <!-- Botones para seleccionar acción -->
+            <button onclick="showForm()">Agregar Álbum</button>
+            <button onclick="showAlbumList()">Editar Álbum</button>
 
+            <!-- Formulario para agregar o editar un álbum (oculto por defecto) -->
+            <form id="albumForm" style="display: none;">
+                <label for="albumTitle">Título del Álbum:</label>
+                <input type="text" id="albumTitle" name="albumTitle" required>
+
+                <label for="albumYear">Año de Lanzamiento:</label>
+                <input type="number" id="albumYear" name="albumYear" required>
+
+                <label for="songList">Lista de Canciones (una por línea):</label>
+                <textarea id="songList" name="songList" required></textarea>
+
+                <button type="submit">Guardar Álbum</button>
+            </form>
+
+            <!-- Sección para mostrar la lista de álbumes (oculto por defecto) -->
+            <div id="albumList" style="display: none;">
+                <h2>Álbumes Existentes</h2>
+                <!-- Aquí se mostrarán los álbumes cargados desde el servidor -->
             </div>
+        </div>
     </main>
+
+    <!-- JavaScript para manejar la visibilidad del formulario y la lista -->
+    <script src="js/discografia.js"></script>
 </body>
 </html>

@@ -1,0 +1,93 @@
+/* Estilos para los botones de acción en la administración de discografía */
+.admin-section button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--primary);
+    border: none;
+    border-radius: 5px;
+    margin: 10px 5px 20px 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.admin-section button:hover {
+    background-color: var(--tertiary);
+}
+
+/* Estilos para el formulario de agregar/editar álbum */
+form#albumForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+form#albumForm label {
+    font-size: 16px;
+    color: var(--secondary);
+}
+
+form#albumForm input,
+form#albumForm textarea {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    width: 100%;
+}
+
+form#albumForm button {
+    padding: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background-color: var(--tertiary);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+form#albumForm button:hover {
+    background-color: var(--secondary);
+}
+
+/* Estilos de la lista de álbumes */
+#albumList {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#albumList h2 {
+    font-size: 20px;
+    color: var(--secondary);
+    margin-bottom: 15px;
+}
+
+#albumList div {
+    padding: 15px;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+#albumList h3 {
+    font-size: 18px;
+    color: var(--tertiary);
+}
+
+#albumList ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--secondary);
+}
