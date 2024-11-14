@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- Enlace al archivo CSS externo -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/calendario.css">
 </head>
 <body>
     <!-- Barra lateral de navegación -->
@@ -26,9 +27,50 @@
     </nav>
     <!-- Contenido principal -->
     <main class="main-content">
-            <div>
-
+        <main class="main-content">
+            <div class="admin-section">
+                <h1>Gestionar Eventos</h1>
+                <button onclick="showEventForm()">Agregar Evento</button>
+                <button onclick="showEventList()">Editar Evento</button>
+    
+                <form id="eventForm" style="display: none;">
+                    <label for="eventDate">Fecha del Evento:</label>
+                    <input type="date" id="eventDate" name="eventDate" required>
+    
+                    <label for="eventLocation">Ubicación del Evento:</label>
+                    <input type="text" id="eventLocation" name="eventLocation" required>
+    
+                    <label for="eventUrl">URL para Comprar Boletos:</label>
+                    <input type="url" id="eventUrl" name="eventUrl" placeholder="https://example.com" required>
+    
+                    <button type="submit">Guardar Evento</button>
+                </form>
+    
+                <div id="eventList" style="display: none;">
+                    <h2>Eventos Existentes</h2>
+                </div>
+                <!-- Modal para editar evento -->
+                <div id="editModal" class="modal">
+                    <div class="modal-content">
+                        <span class="modal-close" onclick="closeModal()">&times;</span>
+                        <h2>Editar Evento</h2>
+                        <form id="editForm">
+                            <input type="hidden" id="editEventId">
+                            <label for="editEventDate">Fecha del Evento:</label>
+                            <input type="date" id="editEventDate" required>
+    
+                            <label for="editEventLocation">Ubicación del Evento:</label>
+                            <input type="text" id="editEventLocation" required>
+    
+                            <label for="editEventUrl">URL para Comprar Boletos:</label>
+                            <input type="url" id="editEventUrl" required>
+    
+                            <button type="submit">Guardar Cambios</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-    </main>
+        </main>
+        <script src="js/calendario.js"></script>
 </body>
 </html>
