@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestionar Miembros</title>
+    <title>Gestión de integrantes</title>
     <!-- Importando la fuente 'Poppins' desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- Enlace al archivo CSS externo -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Gestion/GestionIntegrantes.css">
 </head>
 <body>
     <!-- Barra lateral de navegación -->
@@ -17,20 +18,56 @@
         <!-- Título del panel -->
         <h2>Administrador</h2>
         <!-- Menú de navegación -->
-        <a href="empleados.html">Registrar Empleados</a>
+        <a href="#">Registrar Empleados</a>
         <a href="miembros.html">Gestionar Miembros</a>
-        <a href="calendario.html">Gestionar Calendario</a>
-        <a href="discografia.html">Gestionar Discografía</a>
+        <a href="#">Gestionar Calendario</a>
+        <a href="#">Gestionar Discografía</a>
         <!-- Enlace para cerrar sesión -->
-        <a href="login.html" class="logout">Cerrar sesión</a>
+        <a href="#" class="logout">Cerrar sesión</a>
     </nav>
-    <!-- Contenido principal -->
+
     <main class="main-content">
-            <div>
+        <h1>Gestionar Miembros</h1>
+        <br>
+        <h2>Información personal</h2>
+        <br>
+        <div class="container my-4">
+            <!-- Formularios -->
+            <form id="member-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="role">Rol:</label>
+                <input type="text" id="role" name="role" required>
+                <label for="fact">Dato Curioso:</label>
+                <input type="text" id="fact" name="fact" required>
+                <label for="image">Imagen:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+               
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
 
+        <div class="edit-button-container">
+            <button class="btn-primary" id="edit">Editar</button>
+        </div>
 
-                
-            </div>
+        <!--  mostrar  miembros -->
+        <table id="members-table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Rol</th>
+                    <th>Dato Curioso</th>
+                    <th>Imagen</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!--  miembros -->
+            </tbody>
+        </table>
     </main>
+
+    <script src="Gestion/GestionIntegrantes.js" defer></script>
 </body>
 </html>
