@@ -91,3 +91,56 @@ form#albumForm button:hover {
     padding-left: 20px;
     color: var(--secondary);
 }
+
+/* Estilo para el campo de URL de la imagen en el formulario */
+form#albumForm input[type="url"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    width: 100%;
+}
+
+/* Estilo para las imágenes en la lista de álbumes */
+#albumList img {
+    margin-top: 10px;
+    border-radius: 4px;
+}
+
+/* Estilos para la tarjeta de cada álbum en la lista de álbumes */
+.album-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 15px;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.3s;
+}
+
+.album-card:hover {
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo de la imagen del álbum */
+.album-image {
+    width: 100px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Información del álbum (título y lista de canciones) */
+.album-info h3 {
+    font-size: 18px;
+    color: var(--tertiary);
+    margin-bottom: 10px;
+}
+
+.album-info ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: var(--secondary);
+    font-size: 14px;
+}
