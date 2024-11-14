@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,26 +32,26 @@
         <h2>Información personal</h2>
         <br>
         <div class="container my-4">
-            <div class="button-container">
-                <button class="btn-success" id="add">Agregar</button>
-                <button class="btn-primary" id="edit">Editar</button>
-            </div>
+            <!-- Formularios -->
+            <form id="member-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="role">Rol:</label>
+                <input type="text" id="role" name="role" required>
+                <label for="fact">Dato Curioso:</label>
+                <input type="text" id="fact" name="fact" required>
+                <label for="image">Imagen:</label>
+                <input type="file" id="image" name="image" accept="image/*" required>
+               
+                <button type="submit">Agregar</button>
+            </form>
         </div>
 
-        <!-- Formulario para agregar/editar miembros -->
-        <form id="member-form">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" name="name" required>
-            <label for="role">Rol:</label>
-            <input type="text" id="role" name="role" required>
-            <label for="fact">Dato Curioso:</label>
-            <input type="text" id="fact" name="fact" required>
-            <label for="image">Imagen:</label>
-            <input type="file" id="image" name="image" accept="image/*" required>
-            <button type="submit">Guardar</button>
-        </form>
+        <div class="edit-button-container">
+            <button class="btn-primary" id="edit">Editar</button>
+        </div>
 
-        <!-- Tabla para mostrar los miembros -->
+        <!--  mostrar  miembros -->
         <table id="members-table">
             <thead>
                 <tr>
@@ -63,7 +63,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Aquí se agregarán los miembros -->
+                <!--  miembros -->
             </tbody>
         </table>
     </main>
