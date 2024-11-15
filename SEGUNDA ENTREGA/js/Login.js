@@ -40,7 +40,7 @@ document.getElementById('formularioLogin').addEventListener('submit', async func
             // Si encontramos al administrador
             setUserRole("admin"); // Establece el rol de administrador
             alert("Inicio de sesión exitoso como administrador.");
-            window.location.href = 'Index.html';
+            window.location.href = 'index.html';
             return;
         }
 
