@@ -1,6 +1,6 @@
 // Importa las funciones necesarias de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
-import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
+import { getFirestore, collection, getDocs, query, orderBy } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
 // Configuración de Firebase
 const firebaseConfig = {
@@ -22,8 +22,11 @@ async function loadEvents() {
     eventsContainer.innerHTML = "<h2>Próximos Eventos</h2>"; // Agrega un título básico para ver si funciona
 
     try {
-        // Obtener los documentos de la colección "calendario"
-        const querySnapshot = await getDocs(collection(db, "calendario"));
+        // Crear una consulta para ordenar los eventos por fecha
+        const eventsQuery = query(collection(db, "calendario"), orderBy("fechaEvento"));
+        
+        // Obtener los documentos de la colección "calendario" ordenados por fecha
+        const querySnapshot = await getDocs(eventsQuery);
 
         // Iterar sobre cada documento y crear un elemento en HTML para mostrarlo
         querySnapshot.forEach((doc) => {

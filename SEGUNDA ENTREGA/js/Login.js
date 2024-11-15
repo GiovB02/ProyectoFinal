@@ -63,6 +63,6 @@ document.getElementById('formularioLogin').addEventListener('submit', async func
 
     } catch (error) {
         console.error("Error al iniciar sesión:", error);
-        alert("Ocurrió un error al intentar iniciar sesión. Por favor, intenta más tarde.");
+        alert("Ocurrió un error al intentar iniciar sesión. Por favor, ingrese credenciales válidas.");
     }
 });
