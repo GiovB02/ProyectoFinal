@@ -1,3 +1,9 @@
+:root {
+    --primary: #7bb8de;
+    --secondary: #0c4568;
+    --tertiary: #cc734a;
+}
+
 /* Estilos para los botones de acción en la administración de discografía */
 .admin-section button {
     padding: 10px 20px;
@@ -7,7 +13,7 @@
     background-color: var(--primary);
     border: none;
     border-radius: 5px;
-    margin: 10px 5px 20px 5px;
+    margin: 10px 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
@@ -26,6 +32,7 @@ form#albumForm {
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    box-sizing: border-box;
 }
 
 form#albumForm label {
@@ -40,6 +47,7 @@ form#albumForm textarea {
     border: 1px solid var(--primary);
     border-radius: 4px;
     width: 100%;
+    box-sizing: border-box;
 }
 
 form#albumForm button {
@@ -51,7 +59,7 @@ form#albumForm button {
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background-color 0.3s;
 }
 
 form#albumForm button:hover {
@@ -65,6 +73,7 @@ form#albumForm button:hover {
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin-top: 20px;
+    box-sizing: border-box;
 }
 
 #albumList h2 {
@@ -79,17 +88,20 @@ form#albumForm button:hover {
     border-radius: 4px;
     margin-bottom: 10px;
     background-color: #f9f9f9;
+    box-sizing: border-box;
 }
 
 #albumList h3 {
     font-size: 18px;
     color: var(--tertiary);
+    margin: 0;
 }
 
 #albumList ul {
     list-style-type: disc;
     padding-left: 20px;
     color: var(--secondary);
+    margin: 10px 0;
 }
 
 /* Estilo para el campo de URL de la imagen en el formulario */
@@ -143,4 +155,60 @@ form#albumForm input[type="url"] {
     padding-left: 20px;
     color: var(--secondary);
     font-size: 14px;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        margin-top: 130px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 588px) {
+    .main-content {
+        margin-left: 0;
+        margin-top: 300px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    .main-content {
+        margin-left: 0;
+        margin-top: 300px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    /* Ajustes para el título y botones de acción en la sección de administración */
+    .admin-section h1 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .admin-section button {
+        font-size: 14px;
+        padding: 8px 16px;
+        margin: 5px;
+        width: 100%; /* Hacer que los botones ocupen toda la fila */
+    }
+
+    /* Ajustes para la lista y tarjetas de álbumes */
+    #albumList {
+        gap: 8px;
+    }
+
+    .album-card {
+        width: 100%; /* Ajuste el ancho de las tarjetas al 100% en pantallas pequeñas */
+        margin: 8px 0; /* Margen reducido */
+    }
+
+    .album-info h3 {
+        font-size: 16px;
+    }
+
+    .album-info ul {
+        font-size: 12px; /* Ajuste del tamaño de fuente para la lista de canciones en pantallas pequeñas */
+    }
 }

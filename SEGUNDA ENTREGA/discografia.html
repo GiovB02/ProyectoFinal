@@ -7,8 +7,11 @@
     <!-- Importando la fuente 'Poppins' desde Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <!-- Enlace al archivo CSS externo -->
-    <link rel="stylesheet" href="css/style.css">
+     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/discografia.css">
+    <!-- Script principal (definido como módulo) -->
+    <script type="module" src="js/discografia.js"></script>
+    <script src="js/panel.js"></script>
 </head>
 <body>
     <!-- Barra lateral de navegación -->
@@ -30,8 +33,8 @@
         <div class="admin-section">
             <h1>Gestionar Discografía</h1>
             <!-- Botones para seleccionar acción -->
-            <button onclick="showForm()">Agregar Álbum</button>
-            <button onclick="showAlbumList()">Editar Álbum</button>
+            <button id="buttonAgregarAlbum">Agregar Álbum</button>
+            <button id="buttonEditarAlbum">Editar Álbum</button>
 
             <!-- Formulario para agregar o editar un álbum (oculto por defecto) -->
             <form id="albumForm" style="display: none;">
@@ -53,12 +56,15 @@
             <!-- Sección para mostrar la lista de álbumes (oculto por defecto) -->
             <div id="albumList" style="display: none;">
                 <h2>Álbumes Existentes</h2>
-                <!-- Aquí se mostrarán los álbumes cargados desde el servidor -->
+                <!-- Aquí se mostrarán los álbumes cargados desde Firestore -->
             </div>
         </div>
     </main>
+<<<<<<< Updated upstream
 
     <!-- JavaScript para manejar la visibilidad del formulario y la lista -->
     <script src="js/discografia.js"></script>
+=======
+>>>>>>> Stashed changes
 </body>
 </html>
