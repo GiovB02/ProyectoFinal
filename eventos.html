@@ -35,14 +35,17 @@
         <h1>Próximos Eventos del Cuarteto:</h1>
     </div>
     
-    <!-- Calendario interactivo -->
+    <!-- Botones para cambiar el mes -->
+    <div class="calendar-buttons">
+        <button id="btn-noviembre">Noviembre</button>
+        <button id="btn-diciembre">Diciembre</button>
+    </div>
+
+    <!-- Contenedor para el calendario interactivo -->
     <div class="calendar-container">
         <div class="calendar-header">
-            <h2>ElCuartetoDeNos</h2>
-            <h3 id="calendar-month">Noviembre</h3>
-        </div>
-        <div id="calendar-content">
-            <!-- Los calendarios de noviembre y diciembre se generarán dinámicamente aquí -->
+            <img src="https://www.rosarioencartel.com.ar/web/wp-content/uploads/2015/01/Cuarteto-de-nos-prensa-2024-1-768x561.jpg" alt="El Cuarteto de Nos" class="calendar-image">
+            <div id="calendar-content"></div>
         </div>
     </div>
 
@@ -70,6 +73,6 @@
         <p>Grupo Musical - Proyecto Desarrollo Web</p>
     </footer>
     <script type="module" src="js/eventos.js"></script>
-    <script src="js/calendar.js"></script>
+    <script type="module" src="js/calendar.js"></script>
 </body>
 </html>

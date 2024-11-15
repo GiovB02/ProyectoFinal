@@ -20,7 +20,6 @@ const mes_text = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio"
 const dia_text = ["Dom", "Lun", "Mar", "Mie", "Juv", "Vie", "Sab"];
 const mesesMostrar = [10, 11]; // Solo noviembre (10) y diciembre (11)
 
-// Crear la estructura del calendario y cargar eventos
 crearEstructuraCalendario();
 cargarEventos().then(eventDays => numerarCalendario(eventDays));
 
@@ -49,23 +48,20 @@ function crearEstructuraCalendario() {
   const calendarContent = document.getElementById("calendar-content");
 
   mesesMostrar.forEach(m => {
-    // Sección Mes
     let mes = document.createElement("DIV");
     mes.className = "mes";
+    mes.id = `mes-${m}`; // Asigna un ID para identificar cada mes
     calendarContent.appendChild(mes);
 
-    // Tabla mes
     let tabla_mes = document.createElement("TABLE");
     tabla_mes.className = "tabla_mes";
     mes.appendChild(tabla_mes);
 
-    // Título
     let titulo = document.createElement("CAPTION");
     titulo.className = "titulo";
     titulo.innerText = mes_text[m];
     tabla_mes.appendChild(titulo);
 
-    // Cabecera
     let cabecera = document.createElement("THEAD");
     tabla_mes.appendChild(cabecera);
     let fila = document.createElement("TR");
@@ -76,7 +72,6 @@ function crearEstructuraCalendario() {
       fila.appendChild(dia);
     });
 
-    // Cuerpo
     let cuerpo = document.createElement("TBODY");
     tabla_mes.appendChild(cuerpo);
     for (let f = 0; f < 6; f++) {
@@ -89,6 +84,9 @@ function crearEstructuraCalendario() {
       }
     }
   });
+
+  // Mostrar inicialmente el calendario de noviembre
+  document.getElementById("mes-10").style.display = "block";
 }
 
 // Función para numerar los días y resaltar los días de eventos
@@ -100,7 +98,7 @@ function numerarCalendario(eventDays) {
 
     if (!mesesMostrar.includes(mes)) continue;
 
-    let select_tabla = document.getElementsByClassName('tabla_mes')[mes - 10];
+    let select_tabla = document.getElementById(`mes-${mes}`).querySelector(".tabla_mes");
     let dia = fecha.getDate();
     let dia_semana = fecha.getDay();
 
@@ -125,3 +123,14 @@ function fechaPorDia(año, dia) {
   var date = new Date(año, 0);
   return new Date(date.setDate(dia));
 }
+
+// Manejadores para los botones de cambio de mes
+document.getElementById("btn-noviembre").addEventListener("click", () => {
+  document.getElementById("mes-10").style.display = "block";
+  document.getElementById("mes-11").style.display = "none";
+});
+
+document.getElementById("btn-diciembre").addEventListener("click", () => {
+  document.getElementById("mes-10").style.display = "none";
+  document.getElementById("mes-11").style.display = "block";
+});

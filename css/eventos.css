@@ -24,58 +24,71 @@ h1 {
     text-transform: uppercase;
 }
 
+/* Estilos para los botones de cambio de mes */
+.calendar-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.calendar-buttons button {
+    background-color: #0c4568;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+.calendar-buttons button:hover {
+    background-color: #87cefa;
+}
+
+/* Estilos básicos del calendario */
 .calendar-container {
     width: 300px;
+    margin: 20px auto;
+    text-align: center;
     background-color: white;
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    margin: 20px auto;
-    text-align: center;
 }
 
 .calendar-header {
-    background: url("https://www.rosarioencartel.com.ar/web/wp-content/uploads/2015/01/Cuarteto-de-nos-prensa-2024-1-768x561.jpg") no-repeat center;
-    background-size: cover;
-    padding: 20px;
-    color: white;
     position: relative;
+    text-align: center;
 }
 
-.calendar-header h2,
-.calendar-header h3 {
-    margin: 5px;
-    font-weight: normal;
-}
-
-#calendar-content {
-    padding: 10px;
+.calendar-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.7);
 }
 
 .mes {
-    margin: 0 auto;
-    width: 250px;
-    position: relative;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    display: none; /* Oculto por defecto */
 }
 
 .tabla_mes {
-    width: 100%;
     border-spacing: 3px;
-    empty-cells: hide;
+    width: 100%;
 }
 
 .titulo {
-    text-align: left;
     font-size: 18px;
     color: #c00;
-    margin-bottom: 5px;
+    text-align: center;
 }
 
-.tabla_mes th,
-.tabla_mes td {
+.tabla_mes th, .tabla_mes td {
     font: normal 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding: 6px 4px;
+    padding: 6px;
     text-align: center;
     border: 1px solid #eee;
 }
@@ -84,11 +97,13 @@ h1 {
     color: #999;
 }
 
-.event-day {
+.tabla_mes .event-day {
     background-color: #87cefa;
     color: crimson;
     font-weight: bold;
+    border-radius: 5px;
 }
+
 
 /*PARTE DE LISTA DE CONCIERTOS*/
 #lista-conciertos h2{
