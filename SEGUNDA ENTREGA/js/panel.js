@@ -17,7 +17,7 @@ function configureUserInterface() {
         if (manageEmployeesLink) manageEmployeesLink.style.display = "block";
     } else {
         // Redirige al login si el rol no está definido
-        window.location.href = "login.html";
+        window.location.href = "Login.html";
     }
 }
 
@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", configureUserInterface);
 function logout() {
     sessionStorage.clear();
     localStorage.removeItem("userRole");
-    window.location.href = 'login.html';
+    window.location.href = 'Login.html';
 }
 
 // Agrega el evento de clic al botón de cierre de sesión
