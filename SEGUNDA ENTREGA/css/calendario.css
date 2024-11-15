@@ -32,6 +32,7 @@ form#eventForm {
     border-radius: 8px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    
 }
 
 form#eventForm label {
@@ -64,6 +65,13 @@ form#eventForm button:hover {
 }
 
 /* Contenedor de la lista de eventos */
+.botones-eventos{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+}
+
 #eventList {
     background-color: white;
     padding: 20px;
@@ -219,31 +227,145 @@ form#eventForm button:hover {
     color: var(--primary);
 }
 
-@media (max-width: 768px) {
+@media (min-width: 1024px) { 
     .main-content {
-        margin-left: 0;
-        margin-top: 130px;
-        padding: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+        margin-left: 250px;
     }
 
-    .botones-eventos{
+    #eventList {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 230px); /* Crea columnas de 230px */
+        gap: 20px; /* Espacio entre las tarjetas */
+        justify-content: center; /* Centra el grid dentro del contenedor */
         align-items: center;
-        justify-content:center;
+        padding: 20px;
+        max-width: 790px; /* Limita el ancho máximo del grid */
+        margin: 0 auto; /* Centra el contenedor de eventos en el viewport */
+        margin-left: 20px;
+    }
+
+    #eventList h2 {
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .event-card {
+        width: 230px; /* Ancho fijo para las tarjetas */
+        padding: 15px;
+        box-sizing: border-box;
+        text-align: center;
+        background-color: #f9f9f9;
+        border: 1px solid var(--primary);
+        border-radius: 8px;
+    }
+    form#eventForm{
+        margin-left: 60px;
     }
 }
 
-@media (max-width: 588px) {
+
+
+@media (min-width: 769px) {
+    /* Asegura que el contenido principal esté visible y centrado */
     .main-content {
-        margin-left: 0;
-        margin-top: 300px;
+        margin-left: 195px; /* Margen para la barra lateral */
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    #eventList {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Centra las tarjetas */
+        gap: 20px; /* Espacio entre las tarjetas */
+        padding: 20px;
+    }
+
+    #eventList h2 {
+        justify-content: center; /* Centra las tarjetas */
+        text-align: center;
         padding: 10px;
     }
+
+    .event-card {
+        flex: 1 1 300px; /* Permite que las tarjetas tengan un mínimo de 300px */
+        max-width: 300px; /* Máximo ancho para que no crezcan demasiado */
+        padding: 15px;
+        margin: 10px;
+        box-sizing: border-box;
+        text-align: center; /* Centra el contenido dentro de la tarjeta */
+    }
 }
+
+
+@media (max-width: 768px) {
+    #eventList {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centrar todo el contenido */
+        gap: 20px; /* Espacio entre las tarjetas */
+        padding: 20px;
+    }
+
+    .event-card {
+        width: 100%; /* Ocupa todo el ancho del contenedor */
+        max-width: 600px; /* Define un máximo para que no se estire demasiado */
+        padding: 15px;
+        margin: 0 auto; /* Centra la tarjeta */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra el contenido dentro de la tarjeta */
+        box-sizing: border-box;
+        margin-top: 5px;
+    }
+
+    /* Alineación y espaciado dentro de las tarjetas */
+    .event-info {
+        text-align: center; /* Centrar el texto dentro de la tarjeta */
+        width: 100%; /* Para que el contenido ocupe todo el ancho */
+    }
+
+    /* Centrar el título de "Eventos Existentes" */
+    #eventList h2 {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .botones-eventos {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+}
+
+@media (min-width: 588px) and (max-width: 768px){
+    .main-content{
+        margin-top: 100px;
+    }
+
+}
+
+@media (min-width: 376px) and (max-width: 588px){
+    .main-content {
+        margin-left: 0;
+        margin-top: 250px;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+}
+
 
 @media (max-width: 375px) {
     .main-content {
         margin-left: 0;
-        margin-top: 300px;
+        margin-top: 250px;
         padding: 10px;
         font-size: 12px;
     }
