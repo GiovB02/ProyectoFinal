@@ -127,36 +127,55 @@ h1 {
     background-color: rgb(210, 234, 255);
 }
 
-#lista-conciertos{
-    filter: none;
-    background-color: #c4512e;
+.titulo h2{
+    color: white;
+
 }
 
-.concierto{
-    filter: none;
-    padding: 40px;
+#lista-conciertos {
+    background-color: #0c4568; /* Cambia el fondo de la lista de eventos a un color más oscuro */
+    padding: 20px;
+}
+
+.concierto {
+    background-color: var(--tertiary);
+    padding: 20px;
     color: white;
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 15px;
+    border-radius: 10px; /* Redondea los bordes */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega sombra para dar efecto de elevación */
+    transition: transform 0.2s, box-shadow 0.2s; /* Transición suave */
 }
 
-.concierto h2{
-    color: white;
+.concierto:hover {
+    transform: scale(1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Incrementa la sombra al hacer hover */
 }
 
-.concierto h3 a{
+.concierto h3 {
+    color: var(--primary); /* Cambia el color del título */
+    margin-bottom: 10px;
+}
+
+.concierto h4 a {
     text-decoration: none;
-    color: rgb(88, 38, 38);
+    color: #ffffff; /* Blanco para resaltar el enlace */
+    font-size: 1.1rem;
+    background-color: var(--secondary);
+    padding: 8px 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Transición en el color de fondo */
 }
 
-.concierto h3 a:hover{
-    text-decoration: none;
-    color: rgb(0, 200, 255);
-    font-size: 24px;
+.concierto h4 a:hover {
+    background-color: var(--primary);
+    color: var(--tertiary); /* Cambia el color al hacer hover */
 }
 
-.concierto:nth-child(2n+1){
-    background-color: rgb(177, 112, 6);
+.concierto:nth-child(2n+1) {
+    background-color: rgb(210, 90, 50); /* Alterna el fondo entre los eventos */
 }
 
 /*Seccion de extras de merch y meet and greet*/
@@ -204,4 +223,21 @@ h1 {
 
 .boton:hover{
 	background-color: #cc734a;
+}
+
+/* Ajustes adicionales para dispositivos móviles */
+@media (max-width: 768px) {
+    #lista-conciertos {
+        padding: 10px;
+    }
+
+    .concierto {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+
+    .concierto h4 a {
+        padding: 6px 12px;
+        font-size: 1rem;
+    }
 }
