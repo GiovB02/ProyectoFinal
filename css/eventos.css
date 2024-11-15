@@ -24,116 +24,96 @@ h1 {
     text-transform: uppercase;
 }
 
-.calendar{
-    position: relative;
+/* Estilos para los botones de cambio de mes */
+.calendar-buttons {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding-top: 20px;
-    padding-bottom: 100px;
-    z-index: 1;
+    justify-content: center;
+    margin: 20px 0;
 }
 
-.calendar::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: url("https://www.rosarioencartel.com.ar/web/wp-content/uploads/2015/01/Cuarteto-de-nos-prensa-2024-1-768x561.jpg") no-repeat center;
-    background-size: cover;
-    filter: blur(10px);
-    z-index: -1;
+.calendar-buttons button {
+    background-color: #0c4568;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 5px;
 }
 
-.calendario{
-    position: relative;
+.calendar-buttons button:hover {
+    background-color: #87cefa;
+}
+
+/* Estilos básicos del calendario */
+.calendar-container {
     width: 300px;
-    background-color: #fff;
-    box-sizing: border-box;
-    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
+    margin: 20px auto;
+    text-align: center;
+    background-color: white;
     border-radius: 10px;
     overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.calendar-header {
+    position: relative;
+    text-align: center;
+}
+
+.calendar-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.7);
+}
+
+.mes {
     margin: 20px 0;
-    z-index: 2;
+    display: none; /* Oculto por defecto */
 }
 
-.img-calendario {
-    position: relative;
-    height: 200px;
-    padding: 20px;
-    color: #fff;
-    background: url("https://www.rosarioencartel.com.ar/web/wp-content/uploads/2015/01/Cuarteto-de-nos-prensa-2024-1-768x561.jpg") no-repeat center;
-    background-size: cover;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
+.tabla_mes {
+    border-spacing: 3px;
+    width: 100%;
 }
 
-.img-calendario::before {
-    content: "";
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 0;
+.titulo {
+    font-size: 18px;
+    color: #c00;
+    text-align: center;
 }
 
-.img-calendario h2,
-.img-calendario h3 {
-    position: relative;
-    margin: 0;
-    font-weight: 500;
-    z-index: 1;
-    text-align: left;
-    color: white;
+.tabla_mes th, .tabla_mes td {
+    font: normal 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 6px;
+    text-align: center;
+    border: 1px solid #eee;
 }
 
-.fechas-calendario {
-    padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-gap: 10px;
-    box-sizing: border-box;
+.tabla_mes th {
+    color: #999;
 }
 
-.dia-calendario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 25px;
-    font-weight: 600;
-    color: #262626;
-}
-
-.dia-calendario:nth-child(2n+1) {
-    color: #ff685d;
-}
-
-.num-calendario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 25px;
-    color: #262626;
-    font-weight: 600;
-}
-
-.dia-concierto{
+.tabla_mes .event-day {
+    background-color: #87cefa;
     color: crimson;
-    background-color: rgb(210, 234, 255);
+    font-weight: bold;
+    border-radius: 5px;
 }
 
-.titulo h2{
+
+/*PARTE DE LISTA DE CONCIERTOS*/
+#lista-conciertos h2{
     color: white;
+    margin-bottom: 10px;
 
 }
 
 #lista-conciertos {
-    background-color: #0c4568; /* Cambia el fondo de la lista de eventos a un color más oscuro */
+    background-color: #0c4568; 
     padding: 20px;
 }
 
@@ -144,18 +124,18 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 15px;
-    border-radius: 10px; /* Redondea los bordes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega sombra para dar efecto de elevación */
-    transition: transform 0.2s, box-shadow 0.2s; /* Transición suave */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.2s, box-shadow 0.2s; 
 }
 
 .concierto:hover {
-    transform: scale(1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    transform: scale(1.02); /* Aumenta ligeramente el tamaño al pasar el cursor */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Incrementa la sombra al hacer hover */
 }
 
 .concierto h3 {
-    color: var(--primary); /* Cambia el color del título */
+    color: #ffffff; /* Cambia el color del título */
     margin-bottom: 10px;
 }
 
@@ -171,7 +151,7 @@ h1 {
 
 .concierto h4 a:hover {
     background-color: var(--primary);
-    color: var(--tertiary); /* Cambia el color al hacer hover */
+    color: #0c4568; /* Cambia el color al hacer hover */
 }
 
 .concierto:nth-child(2n+1) {
@@ -184,7 +164,7 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(69, 27, 27);
+    background-color: rgb(76, 41, 41);
     color: white;
     text-transform: uppercase;
     text-align: center;
@@ -195,10 +175,11 @@ h1 {
     width: 45%;
 }
 
-.merch h3, .meet h3{
+#text{
     margin-bottom: 10px;
     font-weight: normal;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: aliceblue;
 }
 
 .merch h2, .meet h2{
