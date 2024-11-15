@@ -3,71 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gestión de integrantes</title>
-    <!-- Importando la fuente 'Poppins' desde Google Fonts -->
+    <title>Gestionar Miembros</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!-- Enlace al archivo CSS externo -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="Gestion/GestionIntegrantes.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/GestionIntegrantes.css">
 </head>
 <body>
-    <!-- Barra lateral de navegación -->
     <nav class="sidebar">
-        <!-- Logo o icono del usuario administrador -->
-        <img id="logo" src="https://static.vecteezy.com/system/resources/previews/000/550/731/original/user-icon-vector.jpg" alt="Icono de Usuario Administrador">
-        <!-- Título del panel -->
-        <h2>Administrador</h2>
-        <!-- Menú de navegación -->
-        <a href="#">Registrar Empleados</a>
+        <img id="logo" src="https://static.vecteezy.com/system/resources/previews/000/550/731/original/user-icon-vector.jpg" alt="Icono de Usuario">
+        <h2 id="user-type">Administrador</h2>
+        <a href="empleados.html" id="manage-employees-link">Registrar Empleados</a>
         <a href="miembros.html">Gestionar Miembros</a>
-        <a href="#">Gestionar Calendario</a>
-        <a href="#">Gestionar Discografía</a>
-        <!-- Enlace para cerrar sesión -->
-        <a href="#" class="logout">Cerrar sesión</a>
+        <a href="calendario.html">Gestionar Calendario</a>
+        <a href="discografia.html">Gestionar Discografía</a>
+        <a href="login.html" class="logout">Cerrar sesión</a>
     </nav>
 
     <main class="main-content">
-        <h1>Gestionar Miembros</h1>
-        <br>
-        <h2>Información personal</h2>
-        <br>
-        <div class="container my-4">
-            <!-- Formularios -->
-            <form id="member-form">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="role">Rol:</label>
-                <input type="text" id="role" name="role" required>
-                <label for="fact">Dato Curioso:</label>
-                <input type="text" id="fact" name="fact" required>
-                <label for="image">Imagen:</label>
-                <input type="file" id="image" name="image" accept="image/*" required>
-               
-                <button type="submit">Agregar</button>
+        <div class="form-container">
+            <h1>Gestionar Miembros</h1>
+            <h2>Información Integrante</h2>
+            <form id="miembro-form">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required>
+
+                <label for="rol">Rol:</label>
+                <input type="text" id="rol" required>
+
+                <label for="dato-curioso">Dato Curioso:</label>
+                <input type="text" id="dato-curioso">
+
+                <label for="imagen-url">URL de la Imagen:</label>
+                <input type="url" id="imagen-url" placeholder="https://ejemplo.com/imagen.jpg">
+
+                <button type="submit" class="add-button">Agregar</button>
             </form>
         </div>
 
-        <div class="edit-button-container">
-            <button class="btn-primary" id="edit">Editar</button>
+        <div id="miembros-container" class="miembros-container">
+            <!-- Aquí se mostrarán los miembros registrados -->
         </div>
-
-        <!--  mostrar  miembros -->
-        <table id="members-table">
-            <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Rol</th>
-                    <th>Dato Curioso</th>
-                    <th>Imagen</th>
-                    <th>Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <!--  miembros -->
-            </tbody>
-        </table>
+        <div id="edit-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="cerrarModal()">&times;</span>
+                <h2>Editar Miembro</h2>
+                <form id="edit-form">
+                    <label for="edit-nombre">Nombre:</label>
+                    <input type="text" id="edit-nombre" required>
+        
+                    <label for="edit-rol">Rol:</label>
+                    <input type="text" id="edit-rol" required>
+        
+                    <label for="edit-dato-curioso">Dato Curioso:</label>
+                    <input type="text" id="edit-dato-curioso">
+        
+                    <label for="edit-imagen-url">URL de la Imagen:</label>
+                    <input type="url" id="edit-imagen-url" placeholder="https://ejemplo.com/imagen.jpg">
+        
+                    <button type="submit">Guardar Cambios</button>
+                    <button type="button" class="delete-button" onclick="eliminarMiembroModal()">Eliminar Miembro</button>
+                </form>
+            </div>
+        </div>        
     </main>
 
-    <script src="Gestion/GestionIntegrantes.js" defer></script>
+    <script type="module" src="js/GestionIntegrantes.js"></script>
+    <script src="js/panel.js"></script>
 </body>
 </html>
