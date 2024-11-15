@@ -24,116 +24,81 @@ h1 {
     text-transform: uppercase;
 }
 
-.calendar{
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    padding-top: 20px;
-    padding-bottom: 100px;
-    z-index: 1;
-}
-
-.calendar::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: url("https://www.rosarioencartel.com.ar/web/wp-content/uploads/2015/01/Cuarteto-de-nos-prensa-2024-1-768x561.jpg") no-repeat center;
-    background-size: cover;
-    filter: blur(10px);
-    z-index: -1;
-}
-
-.calendario{
-    position: relative;
+.calendar-container {
     width: 300px;
-    background-color: #fff;
-    box-sizing: border-box;
-    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.5);
+    background-color: white;
     border-radius: 10px;
     overflow: hidden;
-    margin: 20px 0;
-    z-index: 2;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    margin: 20px auto;
+    text-align: center;
 }
 
-.img-calendario {
-    position: relative;
-    height: 200px;
-    padding: 20px;
-    color: #fff;
+.calendar-header {
     background: url("https://www.rosarioencartel.com.ar/web/wp-content/uploads/2015/01/Cuarteto-de-nos-prensa-2024-1-768x561.jpg") no-repeat center;
     background-size: cover;
-    text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-    box-sizing: border-box;
-}
-
-.img-calendario::before {
-    content: "";
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.4);
-    z-index: 0;
-}
-
-.img-calendario h2,
-.img-calendario h3 {
-    position: relative;
-    margin: 0;
-    font-weight: 500;
-    z-index: 1;
-    text-align: left;
-    color: white;
-}
-
-.fechas-calendario {
     padding: 20px;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-gap: 10px;
-    box-sizing: border-box;
-}
-
-.dia-calendario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 25px;
-    font-weight: 600;
-    color: #262626;
-}
-
-.dia-calendario:nth-child(2n+1) {
-    color: #ff685d;
-}
-
-.num-calendario {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 25px;
-    color: #262626;
-    font-weight: 600;
-}
-
-.dia-concierto{
-    color: crimson;
-    background-color: rgb(210, 234, 255);
-}
-
-.titulo h2{
     color: white;
+    position: relative;
+}
+
+.calendar-header h2,
+.calendar-header h3 {
+    margin: 5px;
+    font-weight: normal;
+}
+
+#calendar-content {
+    padding: 10px;
+}
+
+.mes {
+    margin: 0 auto;
+    width: 250px;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.tabla_mes {
+    width: 100%;
+    border-spacing: 3px;
+    empty-cells: hide;
+}
+
+.titulo {
+    text-align: left;
+    font-size: 18px;
+    color: #c00;
+    margin-bottom: 5px;
+}
+
+.tabla_mes th,
+.tabla_mes td {
+    font: normal 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    padding: 6px 4px;
+    text-align: center;
+    border: 1px solid #eee;
+}
+
+.tabla_mes th {
+    color: #999;
+}
+
+.event-day {
+    background-color: #87cefa;
+    color: crimson;
+    font-weight: bold;
+}
+
+/*PARTE DE LISTA DE CONCIERTOS*/
+#lista-conciertos h2{
+    color: white;
+    margin-bottom: 10px;
 
 }
 
 #lista-conciertos {
-    background-color: #0c4568; /* Cambia el fondo de la lista de eventos a un color más oscuro */
+    background-color: #0c4568; 
     padding: 20px;
 }
 
@@ -144,18 +109,18 @@ h1 {
     text-align: center;
     text-transform: uppercase;
     margin-bottom: 15px;
-    border-radius: 10px; /* Redondea los bordes */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Agrega sombra para dar efecto de elevación */
-    transition: transform 0.2s, box-shadow 0.2s; /* Transición suave */
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    transition: transform 0.2s, box-shadow 0.2s; 
 }
 
 .concierto:hover {
-    transform: scale(1); /* Aumenta ligeramente el tamaño al pasar el cursor */
+    transform: scale(1.02); /* Aumenta ligeramente el tamaño al pasar el cursor */
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Incrementa la sombra al hacer hover */
 }
 
 .concierto h3 {
-    color: var(--primary); /* Cambia el color del título */
+    color: #ffffff; /* Cambia el color del título */
     margin-bottom: 10px;
 }
 
@@ -171,7 +136,7 @@ h1 {
 
 .concierto h4 a:hover {
     background-color: var(--primary);
-    color: var(--tertiary); /* Cambia el color al hacer hover */
+    color: #0c4568; /* Cambia el color al hacer hover */
 }
 
 .concierto:nth-child(2n+1) {
@@ -184,7 +149,7 @@ h1 {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(69, 27, 27);
+    background-color: rgb(76, 41, 41);
     color: white;
     text-transform: uppercase;
     text-align: center;
@@ -195,10 +160,11 @@ h1 {
     width: 45%;
 }
 
-.merch h3, .meet h3{
+#text{
     margin-bottom: 10px;
     font-weight: normal;
-    font-size: 1rem;
+    font-size: 1.2rem;
+    color: aliceblue;
 }
 
 .merch h2, .meet h2{

@@ -34,11 +34,35 @@
     <div class="titulo">
         <h1>Próximos Eventos del Cuarteto:</h1>
     </div>
-    <div id="calendar-container" class="calendar">
-        <!-- El calendario dinámico se generará aquí -->
+    
+    <!-- Calendario interactivo -->
+    <div class="calendar-container">
+        <div class="calendar-header">
+            <h2>ElCuartetoDeNos</h2>
+            <h3 id="calendar-month">Noviembre</h3>
+        </div>
+        <div id="calendar-content">
+            <!-- Los calendarios de noviembre y diciembre se generarán dinámicamente aquí -->
+        </div>
     </div>
+
     <section id="lista-conciertos">
         <!-- Lista de eventos se generará aquí dinámicamente -->
+        <h2>Próximos Eventos</h2>
+
+    </section>
+    <section class="extras">
+        <div class="merch">
+            <h3 id="text">Visita la tienda de</h3>
+            <h2>MERCH OFICIAL</h2>
+            <span><a class="boton" href="https://insomniocr.com/categories/36/el-cuarteto-de-nos">VER MERCH</a></span>
+        </div>
+
+        <div class="meet">
+            <h3 id="text">Participa por un pase para</h3>
+            <h2>MEET & GREET</h2>
+            <span><a class="boton" href="formulario.html">Regístrate</a></span>
+        </div>
     </section>
     <footer>
         <hr id="separador2">
@@ -46,5 +70,6 @@
         <p>Grupo Musical - Proyecto Desarrollo Web</p>
     </footer>
     <script type="module" src="js/eventos.js"></script>
+    <script src="js/calendar.js"></script>
 </body>
 </html>
