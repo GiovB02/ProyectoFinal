@@ -56,7 +56,7 @@ document.getElementById('formularioLogin').addEventListener('submit', async func
             // Usuario autenticado como empleado
             setUserRole("empleado"); // Establece el rol de empleado
             alert("Inicio de sesión exitoso como empleado.");
-            window.location.href = 'Index.html';
+            window.location.href = 'index.html';
         } else {
             alert("No se encontraron permisos suficientes. Contacte con el administrador.");
         }
