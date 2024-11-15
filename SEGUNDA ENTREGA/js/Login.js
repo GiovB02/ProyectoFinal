@@ -24,7 +24,7 @@ function setUserRole(role) {
     sessionStorage.setItem("userType", role); // Guarda el rol en sessionStorage para la sesión actual
 }
 
-// Lógica de inicio de sesión
+// inicio de sesión
 document.getElementById('formularioLogin').addEventListener('submit', async function(event) {
     event.preventDefault();
 
@@ -32,29 +32,26 @@ document.getElementById('formularioLogin').addEventListener('submit', async func
     const contrasena = document.getElementById('contrasena').value;
 
     try {
-        // Verificar primero si el usuario es un administrador (datos en Firestore)
         const adminQuery = query(collection(db, "admin"), where("email", "==", correo), where("password", "==", contrasena));
         const adminSnapshot = await getDocs(adminQuery);
 
         if (!adminSnapshot.empty) {
-            // Si encontramos al administrador
-            setUserRole("admin"); // Establece el rol de administrador
+            setUserRole("admin"); 
             alert("Inicio de sesión exitoso como administrador.");
             window.location.href = 'index.html';
             return;
         }
 
-        // Si no es administrador, intentamos autenticación como empleado usando Firebase Authentication
+        
         const userCredential = await signInWithEmailAndPassword(auth, correo, contrasena);
         const user = userCredential.user;
 
-        // Verificar si el usuario autenticado tiene un registro en la colección `empleados`
         const empleadosQuery = query(collection(db, "empleados"), where("correo", "==", correo));
         const empleadosSnapshot = await getDocs(empleadosQuery);
 
         if (!empleadosSnapshot.empty) {
-            // Usuario autenticado como empleado
-            setUserRole("empleado"); // Establece el rol de empleado
+            
+            setUserRole("empleado"); 
             alert("Inicio de sesión exitoso como empleado.");
             window.location.href = 'index.html';
         } else {
