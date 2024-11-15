@@ -25,10 +25,16 @@ const albumForm = document.getElementById("albumForm");
 const albumList = document.getElementById("albumList");
 const formButton = albumForm.querySelector('button[type="submit"]');
 
+// Variable global para determinar si estamos agregando o editando un álbum
+let editingAlbumId = null;
+
 // Muestra el formulario de agregar álbum y oculta la lista de álbumes
 function showForm() {
     albumForm.style.display = "block";
     albumList.style.display = "none";
+    editingAlbumId = null; // Establece el modo para agregar nuevo álbum
+    formButton.textContent = "Guardar Álbum";
+    albumForm.reset();
 }
 
 // Muestra la lista de álbumes y oculta el formulario
@@ -42,13 +48,13 @@ function showAlbumList() {
 buttonAgregarAlbum.addEventListener('click', showForm);
 buttonEditarAlbum.addEventListener('click', showAlbumList);
 
-// Envía los datos del formulario a Firestore al guardarlos en la colección 'discografia'
-albumForm.addEventListener("submit", async function(event) {
+// Envía los datos del formulario al hacer submit (agregar o editar)
+albumForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const albumTitle = document.getElementById("albumTitle").value;
     const albumYear = document.getElementById("albumYear").value;
-    const albumImage = document.getElementById("albumImage").value;  // Campo para la imagen
+    const albumImage = document.getElementById("albumImage").value; // Campo para la imagen
     const songList = document.getElementById("songList").value.split("\n");
 
     const albumData = {
@@ -59,8 +65,19 @@ albumForm.addEventListener("submit", async function(event) {
     };
 
     try {
-        await addDoc(collection(db, "discografia"), albumData);
-        alert("Álbum guardado correctamente en Firestore");
+        if (editingAlbumId === null) {
+            // Agregar un nuevo álbum
+            await addDoc(collection(db, "discografia"), albumData);
+            alert("Álbum agregado correctamente a Firestore");
+        } else {
+            // Actualizar álbum existente
+            const albumDocRef = doc(db, "discografia", editingAlbumId);
+            await updateDoc(albumDocRef, albumData);
+            alert("Álbum actualizado correctamente en Firestore");
+            editingAlbumId = null; // Salimos del modo edición
+            formButton.textContent = "Guardar Álbum";
+        }
+
         albumForm.reset();
         showAlbumList(); // Volver a mostrar la lista después de guardar
     } catch (error) {
@@ -78,6 +95,11 @@ async function loadAlbums() {
 
         albumList.innerHTML = "<h2>Álbumes Existentes</h2>";
 
+        if (albums.length === 0) {
+            albumList.innerHTML += "<p>No hay álbumes registrados.</p>";
+            return;
+        }
+
         albums.forEach(album => {
             const albumDiv = document.createElement("div");
             albumDiv.classList.add("album-card");
@@ -92,10 +114,6 @@ async function loadAlbums() {
             `;
             albumList.appendChild(albumDiv);
         });
-
-        if (albums.length === 0) {
-            albumList.innerHTML += "<p>No hay álbumes registrados.</p>";
-        }
 
         // Agrega oyentes de eventos a los botones Editar y Eliminar después de crear los elementos
         document.querySelectorAll(".edit-button").forEach(button => {
@@ -128,30 +146,8 @@ async function editAlbum(albumId) {
         // Actualiza el botón del formulario para guardar los cambios
         formButton.textContent = "Actualizar Álbum";
 
-        // Agrega un evento temporal para actualizar el álbum en Firestore
-        const submitHandler = async function(event) {
-            event.preventDefault();
-            const updatedAlbumData = {
-                title: document.getElementById("albumTitle").value,
-                year: parseInt(document.getElementById("albumYear").value),
-                image: document.getElementById("albumImage").value,
-                songs: document.getElementById("songList").value.split("\n")
-            };
-
-            try {
-                await updateDoc(albumDocRef, updatedAlbumData);
-                alert("Álbum actualizado correctamente en Firestore");
-                albumForm.reset();
-                formButton.textContent = "Guardar Álbum";
-                albumForm.removeEventListener("submit", submitHandler);
-                showAlbumList();
-            } catch (error) {
-                console.error("Error al actualizar el álbum en Firestore:", error);
-                alert("Error al actualizar el álbum");
-            }
-        };
-
-        albumForm.addEventListener("submit", submitHandler);
+        // Establece la variable global con el ID del álbum que se está editando
+        editingAlbumId = albumId;
     } else {
         alert("El álbum no existe en la base de datos.");
     }
