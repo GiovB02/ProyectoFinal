@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    background: linear-gradient(135deg, #6a11cb 0%, #0c4568 100%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@ button.toggle-button {
     padding: 15px;
     border: none;
     border-radius: 30px;
-    background-color: #28a745;
+    background-color: #e18514;
     color: #fff;
     font-size: 16px;
     cursor: pointer;
@@ -62,9 +62,37 @@ button.toggle-button {
 
 input[type="submit"]:hover,
 button.toggle-button:hover {
-    background-color: #218838;
+    background-color: #c5710a;
 }
 
 .toggle-link {
-    display: none; /* Oculto para que solo quede el botón */
+    display: none; 
+}
+
+/* Responsividad para pantallas de 575px o menos */
+@media (max-width: 575px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    input[type="email"],
+    input[type="password"],
+    input[type="submit"],
+    button.toggle-button {
+        padding: 12px;
+        font-size: 14px;
+        border-radius: 20px;
+    }
+
+    .container img {
+        width: 80px;
+        height: 80px;
+    }
 }

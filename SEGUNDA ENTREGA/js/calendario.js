@@ -1,3 +1,4 @@
+// Importa las funciones necesarias desde Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getFirestore, collection, addDoc, getDocs, updateDoc, deleteDoc, doc, query, orderBy, getDoc } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 
@@ -15,6 +16,11 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Función para inicializar la página mostrando el formulario de agregar evento
+function initializePage() {
+    showEventForm(); // Mostrar el formulario al iniciar la página
+}
+
 // Muestra el formulario de agregar evento y oculta la lista de eventos
 window.showEventForm = function() {
     document.getElementById("eventForm").style.display = "block";
@@ -25,7 +31,7 @@ window.showEventForm = function() {
 window.showEventList = function() {
     document.getElementById("eventForm").style.display = "none";
     document.getElementById("eventList").style.display = "block";
-    loadEvents();
+    loadEvents(); // Cargar los eventos al mostrar la lista
 }
 
 // Función para eliminar el evento de Firebase
@@ -60,7 +66,7 @@ document.getElementById("eventForm").addEventListener("submit", async function(e
             urlBoletos: eventUrl
         });
 
-        alert("Evento guardado correctamente en Firebase");
+        alert("Evento guardado correctamente");
         document.getElementById("eventForm").reset();
         showEventList();
     } catch (error) {
@@ -133,10 +139,13 @@ document.getElementById("editForm").addEventListener("submit", async function(ev
             ubicacionEvento: updatedLocation,
             urlBoletos: updatedUrl
         });
-        alert("Evento actualizado correctamente en Firebase");
+        alert("Evento actualizado correctamente");
         closeModal();
         showEventList();
     } catch (error) {
         console.error("Error al actualizar el evento: ", error);
     }
 });
+
+// Inicializa la página mostrando el formulario de agregar evento al cargar la página
+initializePage();

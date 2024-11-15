@@ -9,23 +9,23 @@
     <link rel="stylesheet" href="css/calendario.css">
 </head>
 <body>
-    <!-- Barra lateral de navegación -->
     <nav class="sidebar">
-        <img id="logo" src="https://static.vecteezy.com/system/resources/previews/000/550/731/original/user-icon-vector.jpg" alt="Icono de Usuario Administrador">
-        <h2>Administrador</h2>
-        <a href="empleados.html">Registrar Empleados</a>
+        <img id="logo" src="https://static.vecteezy.com/system/resources/previews/000/550/731/original/user-icon-vector.jpg" alt="Icono de Usuario">
+        <h2 id="user-type">Administrador</h2>
+        <a href="empleados.html" id="manage-employees-link">Registrar Empleados</a>
         <a href="miembros.html">Gestionar Miembros</a>
         <a href="calendario.html">Gestionar Calendario</a>
         <a href="discografia.html">Gestionar Discografía</a>
         <a href="login.html" class="logout">Cerrar sesión</a>
     </nav>
-
     <!-- Contenido principal -->
     <main class="main-content">
         <div class="admin-section">
             <h1>Gestionar Eventos</h1>
-            <button onclick="showEventForm()">Agregar Evento</button>
-            <button onclick="showEventList()">Editar Evento</button>
+            <div class="botones-eventos">
+                <button onclick="showEventForm()">Agregar Evento</button>
+                <button onclick="showEventList()">Editar Evento</button>
+            </div>
 
             <form id="eventForm" style="display: none;">
                 <label for="eventDate">Fecha del Evento:</label>
@@ -65,5 +65,6 @@
 
     <!-- Cargar el script como módulo -->
     <script type="module" src="js/calendario.js"></script>
+    <script src="js/panel.js"></script>
 </body>
 </html>

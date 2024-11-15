@@ -1,4 +1,4 @@
-/* Variables de colores */ 
+/* Variables de colores */
 :root {
     --primary: #7bb8de;
     --secondary: #0c4568;
@@ -16,7 +16,7 @@
 /* Estilos del cuerpo */
 body {
     display: flex;
-    height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -28,8 +28,11 @@ body {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    height: 100vh; /* Asegura que la barra lateral ocupe toda la altura */
+    height: 100vh;
     position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
 }
 
 .sidebar h2 {
@@ -55,6 +58,7 @@ body {
     display: block;
     border-radius: 5px;
     transition: background-color 0.3s, color 0.3s;
+    text-align: center;
 }
 
 .sidebar a:hover {
@@ -62,31 +66,31 @@ body {
     color: #fff;
 }
 
-/* Estilos específicos para el enlace de cerrar sesión */
+/* Enlace de cerrar sesión */
 .sidebar a.logout {
     background-color: var(--secondary);
     font-weight: bold;
     color: white;
-    margin-top: auto; /* Empuja el enlace hacia el final de la barra lateral */
+    margin-top: auto;
 }
 
 .sidebar a.logout:hover {
     background-color: red;
 }
 
-/* Contenedor principal para evitar el solapamiento con la barra lateral */
+/* Contenido Principal */
 .main-content {
     margin-left: 250px;
     flex-grow: 1;
-    padding: 40px;
+    padding: 20px;
     background-color: #f4f7f9;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
-    align-items: center; 
+    align-items: center;
     overflow-y: auto;
 }
 
+/* Mensaje de Bienvenida */
 .welcome-message {
     background-color: var(--primary);
     color: white;
@@ -94,4 +98,111 @@ body {
     border-radius: 10px;
     text-align: center;
     font-size: 24px;
+    max-width: 90%; /* Asegura que no se corte en pantallas pequeñas */
+    margin-bottom: 20px;
+}
+
+/* Responsividad del Sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        position: fixed;
+        top: 0;
+        z-index: 1;
+    }
+
+    .sidebar img#logo {
+        width: 50px;
+        height: 50px;
+        margin-right: 4px;
+    }
+
+    .sidebar h2 {
+        display: none;
+    }
+
+    .main-content {
+        margin-left: 0; /* Quita el margen izquierdo cuando el sidebar está horizontal */
+        padding-top: 70px; /* Añade un margen superior para evitar que el contenido quede debajo del sidebar en móvil */
+    }
+
+    #welcome-message {
+        font-size: 22px;
+        padding: 15px;
+        align-items: center;
+        margin-top: 300px;
+    }
+}
+
+@media (max-width: 589px) {
+    .sidebar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sidebar img#logo {
+        display: none; /* Oculta el logo para ahorrar espacio */
+    }
+
+    .sidebar a {
+        font-size: 12px; /* Reduce el tamaño del texto para que quepan mejor */
+        padding: 8px 5px;
+    }
+
+    #welcome-message {
+        font-size: 18px;
+        padding: 15px;
+        align-items: center;
+        margin-top: 400px;
+    }
+}
+
+/* Ajuste para pantallas extremadamente pequeñas (menos de 395px) */
+
+
+/* Ajustes de tamaño intermedio para pantallas tablet */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .main-content {
+        margin-left: 200px;
+        margin: 0 auto;
+        padding: 20px;
+        align-items: center;
+
+    }
+
+    #welcome-message {
+        font-size: 20px; /* Ajuste para tablet */
+        padding: 15px;
+        align-items: center;
+        margin-top: 300px;
+        margin-left: 225px;
+        
+    }
+}
+
+/* Ajuste para el mensaje de bienvenida en pantallas pequeñas */
+@media (max-width: 480px) {
+    #welcome-message {
+        font-size: 18px;
+        padding: 15px;
+        align-items: center;
+        margin-top: 400px;
+    }
+}
+
+@media (min-width:1025px) {
+    #welcome-message {
+        font-size: 28px;
+        padding: 15px;
+        align-items: center;
+        margin-top: 200px;
+    }
 }

@@ -1,17 +1,38 @@
-// Obtener el tipo de usuario desde sessionStorage
-const userType = sessionStorage.getItem("userType");
+// Obtiene el tipo de usuario desde sessionStorage o localStorage
+const userType = sessionStorage.getItem("userType") || localStorage.getItem("userRole");
 
-// Actualizar el título y la bienvenida dependiendo del tipo de usuario
-if (userType === "empleado") {
-    document.getElementById("user-type").innerText = "Empleado";
-    document.getElementById("welcome-message").innerText = "Has iniciado sesión como empleado";
-    document.getElementById("manage-employees-link").style.display = "none"; // Ocultar "Registrar Empleados"
-} else if (userType === "admin") {
-    document.getElementById("user-type").innerText = "Administrador";
-    document.getElementById("welcome-message").innerText = "Has iniciado sesión como administrador";
+// Función para configurar la interfaz según el rol del usuario
+function configureUserInterface() {
+    const userTypeElement = document.getElementById("user-type");
+    const welcomeMessage = document.getElementById("welcome-message");
+    const manageEmployeesLink = document.getElementById("manage-employees-link");
+
+    if (userType === "empleado") {
+        userTypeElement.innerText = "Empleado";
+        if (welcomeMessage) welcomeMessage.innerText = "Has iniciado sesión como empleado";
+        if (manageEmployeesLink) manageEmployeesLink.style.display = "none"; // Ocultar "Registrar Empleados"
+    } else if (userType === "admin") {
+        userTypeElement.innerText = "Administrador";
+        if (welcomeMessage) welcomeMessage.innerText = "Has iniciado sesión como administrador";
+        if (manageEmployeesLink) manageEmployeesLink.style.display = "block";
+    } else {
+        // Redirige al login si el rol no está definido
+        window.location.href = "login.html";
+    }
 }
 
-// Añadir un evento de cierre de sesión para limpiar sessionStorage
-document.querySelector(".logout").addEventListener("click", () => {
-    sessionStorage.removeItem("userType");
+// Ejecuta la configuración de la interfaz al cargar la página
+document.addEventListener("DOMContentLoaded", configureUserInterface);
+
+// Función de logout para limpiar los datos de la sesión y redirigir al login
+function logout() {
+    sessionStorage.clear();
+    localStorage.removeItem("userRole");
+    window.location.href = 'login.html';
+}
+
+// Agrega el evento de clic al botón de cierre de sesión
+document.querySelector('.logout').addEventListener('click', (event) => {
+    event.preventDefault();
+    logout();
 });

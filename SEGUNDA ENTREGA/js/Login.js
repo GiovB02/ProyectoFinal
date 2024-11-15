@@ -1,3 +1,4 @@
+// Importa las funciones necesarias desde el SDK de Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
 import { getFirestore, collection, query, where, getDocs } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js";
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
@@ -17,6 +18,12 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
 
+// Función para establecer el rol de usuario en localStorage y sessionStorage
+function setUserRole(role) {
+    localStorage.setItem("userRole", role); // Guarda el rol en localStorage
+    sessionStorage.setItem("userType", role); // Guarda el rol en sessionStorage para la sesión actual
+}
+
 // Lógica de inicio de sesión
 document.getElementById('formularioLogin').addEventListener('submit', async function(event) {
     event.preventDefault();
@@ -31,7 +38,7 @@ document.getElementById('formularioLogin').addEventListener('submit', async func
 
         if (!adminSnapshot.empty) {
             // Si encontramos al administrador
-            sessionStorage.setItem("userType", "admin");
+            setUserRole("admin"); // Establece el rol de administrador
             alert("Inicio de sesión exitoso como administrador.");
             window.location.href = 'Index.html';
             return;
@@ -47,7 +54,7 @@ document.getElementById('formularioLogin').addEventListener('submit', async func
 
         if (!empleadosSnapshot.empty) {
             // Usuario autenticado como empleado
-            sessionStorage.setItem("userType", "empleado");
+            setUserRole("empleado"); // Establece el rol de empleado
             alert("Inicio de sesión exitoso como empleado.");
             window.location.href = 'Index.html';
         } else {

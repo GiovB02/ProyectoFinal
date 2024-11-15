@@ -1,33 +1,16 @@
-/* Estilos básicos */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    background-color: #f4f7f9;
-}
-
-h1 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.container {
-    margin-bottom: 30px;
-    text-align: center;
-}
-
+/* Formulario */
 .form-container {
     width: 100%;
     max-width: 600px;
-    margin: 0 auto;
     background-color: #ffffff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin-top: 550px;
+    margin-top: 20px;
+}
+
+.form-container h1{
+    text-align: center;
 }
 
 #miembro-form label {
@@ -46,7 +29,6 @@ h1 {
     box-sizing: border-box;
 }
 
-/* Botón de agregar miembro */
 .add-button {
     margin-top: 20px;
     width: 100%;
@@ -87,7 +69,7 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    height: auto;
 }
 
 .miembro-card h3 {
@@ -107,7 +89,6 @@ h1 {
     height: auto;
     border-radius: 8px;
     margin-top: 10px;
-    flex-grow: 1;
 }
 
 /* Botones de acción en la tarjeta de miembro */
@@ -126,7 +107,7 @@ h1 {
 
 .edit-button {
     background-color: #cc734a;
-    margin-bottom: 5px; /* Espaciado entre el botón de editar y eliminar */
+    margin-bottom: 5px;
 }
 
 .edit-button:hover {
@@ -194,8 +175,9 @@ h1 {
     cursor: pointer;
     font-size: 16px;
 }
-.modal-content button:hover{
-    background-color: darkgreen;
+
+.modal-content button:hover {
+    background-color: #218838;
 }
 
 .modal-content .delete-button {
@@ -212,4 +194,40 @@ h1 {
 
 .modal-content .delete-button:hover {
     background-color: #c0392b;
+}
+
+/* Responsividad de la página de gestión de miembros */
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        margin-top: 300px;
+        padding: 10px;
+    }
+
+    .form-container {
+        width: 90%;
+    }
+
+    .miembros-container {
+        gap: 10px;
+    }
+
+    .miembro-card {
+        width: 100%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .main-content {
+        margin-left: 200px;
+        padding: 20px;
+    }
+
+    .form-container {
+        width: 80%;
+    }
+
+    .miembro-card {
+        width: 45%;
+    }
 }
